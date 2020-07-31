@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.integrum.ob.models.Location;
-import fr.integrum.ob.repositories.LocationRepository;
+import fr.integrum.ob.models.UserLocation;
+import fr.integrum.ob.repositories.UserLocationRepository;
 
 @RestController
 public class LocationController {
@@ -20,15 +20,15 @@ public class LocationController {
 	private static Logger LOG = LoggerFactory.getLogger(LocationController.class);
 
 	@Autowired
-	private LocationRepository locationRepository;
+	private UserLocationRepository locationRepository;
 
 	@GetMapping("/locations")
-	public Page<Location> getLocations(Pageable pageable) {
+	public Page<UserLocation> getLocations(Pageable pageable) {
 		return locationRepository.findAll(pageable);
 	}
 
 	@PostMapping("/locations")
-	public Location createLocation(@Validated @RequestBody Location location) {
+	public UserLocation createLocation(@Validated @RequestBody UserLocation location) {
 		LOG.info("Location created. ");
 		return locationRepository.save(location);
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,10 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
-
 @Entity
-@Table(name = "assortment")
+@Table(name = "assortments")
 public class Assortment {
 
 	@Id
@@ -32,23 +31,13 @@ public class Assortment {
 	private String description;
 	@Column
 	private Boolean active;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name = "assortment_id", referencedColumnName = "assortment_id")
 	private List<ProductsAssortment> products;
 
 	public Assortment() {
 		super();
 	}
-
-	public Assortment(String client, String organization, String name, String description, Boolean active) {
-		super();
-		this.client = client;
-		this.organization = organization;
-		this.name = name;
-		this.description = description;
-		this.active = active;
-	}
-
 
 	public String getClient() {
 		return client;

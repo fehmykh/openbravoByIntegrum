@@ -5,32 +5,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "products_assortment")
+@Table(name = "product_assortment")
 public class ProductsAssortment {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long productsAssortmentId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "prod_assortment_id")
+	private Integer prodAssortmentId;
 	@Column
 	private String product;
 	@Column
 	private boolean bestseller;
-	@ManyToOne
-	private Assortment assortment;
+	
+	@Column(name="assortment_id")
+	private Integer assortmentId;
 
 	public ProductsAssortment() {
 		super();
-	}
-
-	public ProductsAssortment(String product, boolean bestseller) {
-		super();
-		this.product = product;
-		this.bestseller = bestseller;
 	}
 
 	public String getProduct() {
@@ -46,6 +42,20 @@ public class ProductsAssortment {
 	}
 
 	public void setBestseller(boolean bestseller) {
+		this.bestseller = bestseller;
+	}
+
+	public Integer getAssortmentId() {
+		return assortmentId;
+	}
+
+	public void setAssortment(Integer assortmentId) {
+		this.assortmentId = assortmentId;
+	}
+
+	public ProductsAssortment(String product, boolean bestseller) {
+		super();
+		this.product = product;
 		this.bestseller = bestseller;
 	}
 

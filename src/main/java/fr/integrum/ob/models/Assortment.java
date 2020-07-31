@@ -2,21 +2,26 @@ package fr.integrum.ob.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "assortment")
 public class Assortment {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String assortmentId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "assortment_id")
+	private Integer assortmentId;
 	@Column
 	private String client;
 	@Column
@@ -27,32 +32,23 @@ public class Assortment {
 	private String description;
 	@Column
 	private Boolean active;
-	@OneToMany(mappedBy="product")
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "assortment_id", referencedColumnName = "assortment_id")
 	private List<ProductsAssortment> products;
 
 	public Assortment() {
 		super();
 	}
 
-	public Assortment(String assortmentId, String client, String organization, String name, String description,
-			Boolean active, List<ProductsAssortment> products) {
+	public Assortment(String client, String organization, String name, String description, Boolean active) {
 		super();
-		this.assortmentId = assortmentId;
 		this.client = client;
 		this.organization = organization;
 		this.name = name;
 		this.description = description;
 		this.active = active;
-		this.products = products;
 	}
 
-	public String getAssortmentId() {
-		return assortmentId;
-	}
-
-	public void setAssortmentId(String assortmentId) {
-		this.assortmentId = assortmentId;
-	}
 
 	public String getClient() {
 		return client;

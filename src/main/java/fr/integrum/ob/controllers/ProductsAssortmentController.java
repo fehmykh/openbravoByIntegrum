@@ -13,26 +13,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.integrum.ob.models.Assortment;
 import fr.integrum.ob.models.ProductsAssortment;
-import fr.integrum.ob.repositories.AssortmentRepository;
+import fr.integrum.ob.repositories.ProductsAssortmentRepository;
 
 @RestController
-public class AssortmentController {
+public class ProductsAssortmentController {
 	
-	private static Logger LOG = LoggerFactory.getLogger(AssortmentController.class);
+	private static Logger LOG = LoggerFactory.getLogger(ProductsAssortmentController.class);
 
 	@Autowired
-	private AssortmentRepository assortmentRepository;
+	private ProductsAssortmentRepository productsAssortmentRepository;
 	
-	@GetMapping("/assortments")
-    public Page<Assortment> getAssortments(Pageable pageable) {
-        return assortmentRepository.findAll(pageable);
+	@GetMapping("/productsAssortments")
+    public Page<ProductsAssortment> getAssortments(Pageable pageable) {
+        return productsAssortmentRepository.findAll(pageable);
     }
 	
-	@PostMapping("/assortments")
-    public Assortment createAssortment(@Validated @RequestBody Assortment assortment) {
-		ProductsAssortment productsAssortment = new ProductsAssortment();
-		LOG.info("Assortment {} created. ", assortment.getName());
-        return assortmentRepository.save(assortment);
+	@PostMapping("/productsAssortments")
+    public ProductsAssortment createProductsAssortment(@Validated @RequestBody ProductsAssortment productsAssortment) {
+        return productsAssortmentRepository.save(productsAssortment);
     }
 
 }

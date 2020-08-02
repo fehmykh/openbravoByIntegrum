@@ -12,9 +12,9 @@ import javax.persistence.Table;
 public class UserLocation {
 
 	@Id
-	@Column(name = "location_id")
+	@Column(name = "user_location_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer locationId;
+	private Integer userLocationId;
 	@Column
 	private String address;
 	@Column
@@ -35,11 +35,11 @@ public class UserLocation {
 	}
 
 	public Integer getLocationId() {
-		return locationId;
+		return userLocationId;
 	}
 
-	public void setLocationId(Integer locationId) {
-		this.locationId = locationId;
+	public void setLocationId(Integer userLocationId) {
+		this.userLocationId = userLocationId;
 	}
 
 	public String getAddress() {

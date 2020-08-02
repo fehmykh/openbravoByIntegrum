@@ -1,0 +1,135 @@
+/* POST http://localhost:8090/orders */
+{
+    "posTerminal$_identifier": "POS001",
+    "documentType": "",
+    "priceIncludesTax": true,
+    "currency$_identifier": "EUR",
+    "bp": "",
+    "documentTypeReturnId": "",
+    "priceList": "PRICE_SUMMER",
+    "loaded": "2020-02-08T00:00:00.000",
+    "documentNo": "",
+    "organization$_identifier": "1",
+    "iscancelled": false,
+    "isModified": false,
+    "client": "Nike",
+    "currency": "EUR",
+    "cashVAT": false,
+    "updatedBy": "Fehmi Khenissi",
+    "totalNetAmount": 100,
+    "posTerminal": "POST001-F",
+    "isLayaway": true,
+    "rtpRespsuccess": false,
+    "bpLocId": "UNKNOWN_VALUE",
+    "creationDate": "",
+    "warehouse": "",
+    "isQuotation": false,
+    "rtpResponse": false,
+    "invoiceTerms": "",
+    "totalamount": 150,
+    "createdBy": "Fehmi Khenissi",
+    "organization": "*",
+    "bpBillLocId": "",
+    "orderDate": "",
+    "businessPartner$_identifier": "",
+    "trxOrganization": "",
+    "invoiceCreated": "",
+    "generateInvoice": "",
+    "recordInImportEntry": true,
+    "lines": [
+        {
+            "grossUnitPrice": null,
+            "obresmsQtysenttokitchen": null,
+            "loaded": null,
+            "uOM": null,
+            "deliveredQuantity": null,
+            "obposIspaid": null,
+            "grossListPrice": null,
+            "quotationDocumentTypeId": null,
+            "productId": null,
+            "baseNetUnitPrice": null,
+            "unitPrice": null,
+            "pricePrecision": null,
+            "taxExempt": null,
+            "obposCanbedelivered": null,
+            "tax": null,
+            "warehouse": null,
+            "taxCategory": null,
+            "obwplQtyinpicking": null,
+            "returnable": null,
+            "overdueReturnDays": null,
+            "product": null,
+            "obtaxexIstaxexempt": null,
+            "remainingQuantity": null,
+            "grossAmount": null,
+            "documentTypeId": null,
+            "discountPercentage": null,
+            "shippedQuantity": null,
+            "productType": null,
+            "qty": 4,
+            "netAmount": null,
+            "invoicedQuantity": null,
+            "listPrice": null,
+            "warehousename": null,
+            "organization": null,
+            "priceIncludesTax": null,
+            "shipmentLines": [
+                {
+                    "shipmentlineNo": 150,
+                    "shipment": "Unknown",
+                    "remainingQty": 2,
+                    "qty": 4
+                }
+            ],
+            "taxLines": null,
+            "promotions": [
+                {
+                    "discountRule": "SummerSoldOut",
+                    "discountType": "Solde été",
+                    "name": "Summer Sold Out",
+                    "amount": 240,
+                    "actualAmt": 172,
+                    "hidden": false,
+                    "displayedTotalAmount": 200,
+                    "quantity": 20,
+                    "obdiscQtyoffer": 60
+                }
+            ]
+        }
+    ],
+    "payments": [
+        {
+            "amount": 250,
+            "paidAmount": 250,
+            "paymentDate": "",
+            "name": "",
+            "kind": "",
+            "rate": "",
+            "mulrate": "",
+            "openDrawer": true,
+            "isPrePayment": true,
+            "oBPOSPOSTerminal": "",
+            "oBPOSPOSTerminalSearchKey": ""
+        }
+    ],
+    "taxes": [
+        {
+            "taxName": {
+                "rate": 10,
+                "net": 65,
+                "amount": 71,
+                "gross": 0,
+                "cascade": true,
+                "docTaxAmount": "",
+                "lineNo": ""
+            }
+        }
+    ],
+    "approvals": [
+        {
+            "approvalType": "",
+            "userContact": "Fehmi Khenissi",
+            "created": 10
+        }
+    ]
+}

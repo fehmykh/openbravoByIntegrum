@@ -1,0 +1,19 @@
+/*POST http://localhost/assortments*/
+
+{
+    "client": "Nike",
+    "organization": "*",
+    "name": "SoldOut Summer",
+    "description": "Summer sold out",
+    "active": true,
+    "products": [
+        {
+            "product": "test",
+            "bestseller": true
+        },
+        {
+            "product": "test2",
+            "bestseller": true
+        }
+    ]
+}

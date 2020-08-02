@@ -40,7 +40,7 @@ public class Product {
 	@JoinColumn(name = "product_id", referencedColumnName = "product_id")
 	private ProductCategory productCategory;
 	@Column
-	private Boolean taxCategory;
+	private String taxCategory;
 	@Column
 	private Boolean active;
 	@Column
@@ -217,11 +217,11 @@ public class Product {
 		this.productCategory = productCategory;
 	}
 
-	public Boolean getTaxCategory() {
+	public String getTaxCategory() {
 		return taxCategory;
 	}
 
-	public void setTaxCategory(Boolean taxCategory) {
+	public void setTaxCategory(String taxCategory) {
 		this.taxCategory = taxCategory;
 	}
 

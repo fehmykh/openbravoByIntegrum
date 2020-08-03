@@ -1,4 +1,4 @@
-/*POST http://localhost/products*/
+/*POST http://localhost:8090/ob/products*/
 
 {
     "client": "Nike",

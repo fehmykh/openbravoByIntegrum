@@ -1,0 +1,41 @@
+{
+    "name": "Nike",
+    "organization": "*",
+    "searchKey": "CUST001",
+    "commercialName": "FKH-CUST001",
+    "fiscalName": "FKH-CUST001",
+    "description": "",
+    "bpCategory": "",
+    "taxID": "",
+    "language": "FRA",
+    "greeting": {
+        "name": "Mr.",
+        "title": "Monsieur"
+    },
+    "currency": "EUR",
+    "birthDay": "26-09-1992",
+    "bpTaxCategory": "",
+    "paymentMethod": "",
+    "paymentTerms": "",
+    "priceList": "SummerSoldOut",
+    "customerConsent": "",
+    "creditLineLimit": "",
+    "currentBalance": "",
+    "invoiceTerms": "",
+    "locations": [
+        {
+            "address": "65 Boulevard Lénine",
+            "city": "Vénissieux",
+            "zipCode": "69200",
+            "country": "France",
+            "region": "Rhone-Alpes",
+            "name": "Adresse personnelle"
+        }
+    ],
+    "contactInformation": {
+        "firstName": "Fehmi",
+        "lastName": "Khenissi",
+        "phone": "0603166825",
+        "email": "fehmikhenissi@integrum.fr"
+    }
+}

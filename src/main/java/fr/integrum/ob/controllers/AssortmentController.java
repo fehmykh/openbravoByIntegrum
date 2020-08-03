@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.integrum.ob.models.Assortment;
@@ -16,6 +17,7 @@ import fr.integrum.ob.models.ProductsAssortment;
 import fr.integrum.ob.repositories.AssortmentRepository;
 
 @RestController
+@RequestMapping(value = "/ob")
 public class AssortmentController {
 	
 	private static Logger LOG = LoggerFactory.getLogger(AssortmentController.class);

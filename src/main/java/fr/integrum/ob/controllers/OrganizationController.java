@@ -9,12 +9,14 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.integrum.ob.models.Organization;
 import fr.integrum.ob.repositories.OrganizationRepository;
 
 @RestController
+@RequestMapping(value = "/ob")
 public class OrganizationController {
 	
 	private static Logger LOG = LoggerFactory.getLogger(OrganizationController.class);

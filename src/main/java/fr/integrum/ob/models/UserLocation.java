@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "locations")
+@Table(name = "ob_locations")
 public class UserLocation {
 
 	@Id
@@ -17,16 +17,22 @@ public class UserLocation {
 	private Integer userLocationId;
 	@Column
 	private String address;
+	
 	@Column
 	private String city;
+	
 	@Column
 	private String zipCode;
+	
 	@Column
 	private String country;
+	
 	@Column
 	private String region;
+	
 	@Column
 	private String name;
+	
 	@Column(name = "business_partner_id")
 	private Integer businessPartnerId;
 

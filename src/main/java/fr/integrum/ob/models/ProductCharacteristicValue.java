@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "product_characteristic_values")
+@Table(name = "ob_product_characteristic_values")
 public class ProductCharacteristicValue {
 	
 	

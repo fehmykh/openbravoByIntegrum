@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "products")
+@Table(name = "ob_products")
 public class Product {
 
 	@Id

@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="lines")
+@Table(name="ob_lines")
 public class Line {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

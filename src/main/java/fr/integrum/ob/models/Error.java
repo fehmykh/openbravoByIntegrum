@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "errors")
+@Table(name = "ob_errors")
 public class Error {
 
 	@Id

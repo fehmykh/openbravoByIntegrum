@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tax_header_identifiers")
+@Table(name = "ob_tax_header_identifiers")
 public class TaxHeaderIdentifier {
 	@Id
 	@Column(name = "tax_header_identifier_id")

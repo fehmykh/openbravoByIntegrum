@@ -1,0 +1,491 @@
+/* POST http://localhost:8090/nk/transactions */
+
+{
+    "transactionStatus": "SUCCESS",
+    "RetailTransaction": {
+        "transactionStatus": "SUCCESS",
+        "LineItems": [
+            {
+                "EntryMethod": "Manual",
+                "VoidFlag": false,
+                "Coupon": {
+                    "ScanCode": "22555"
+                },
+                "SequenceNumber": 02,
+                "ScanData": [
+                    {
+                        "Data": ""
+                    }
+                ],
+                "BeginDateTime":"",
+                 "EndDateTime":"",
+                 "RepairID": "2255",
+                 "Sale": [
+                     {
+                        "SerialNumbers": [
+                            {
+                                "ID": 2
+                            }
+                        ],
+                        "Associates": [
+                            {
+                                "ID": 1
+                            }
+                        ],
+                        "ItemType": {
+                            "type": ""
+                        },
+                        "Item": {
+                            "type": ""
+                        },
+                        "Descriptions": [
+                            {
+                                "Text": "blablabla"
+                            }
+                        ],
+                        "RegularSalesUnitPrice":{
+                            "Amount": 5.0,
+                            "Currency": "EUR"
+                        },
+                        "ActualSalesUnitPrice":{
+                            "Amount": 5.0,
+                            "Currency": "EUR"
+                        },
+                        "ExtendedAmount":{
+                            "Amount": 5.0,
+                            "Currency": "EUR"
+                        },
+                        "Quantity": {
+                            "Quantity": 5
+                        },
+                        "Taxes": [
+                            {
+                                "Amount": {
+                                    "Amount": 10,
+                                    "Currency": "EUR"
+                                },
+                                "percent": 15,
+                                "taxGroupId": "000145",
+                                "taxJurisdictionId": "00146"
+                            }
+                        ],
+                        "eCommerceID":"000015",
+                        "GiftReceiptFlag": true,
+                        "ItemNotOnFileFlag":false,
+                        "RetailPriceModifier": [
+                            {
+                                "VoidFlag": false,
+                                "MethodCode": "0015",
+                                "SequenceNumber": 0,
+                                "Amount":{
+                                    "Amount": 5.0,
+                                    "Currency": "EUR"
+                                },
+                                "PromotionID":"000320",
+                                "Coupon": {
+                                    "ScanCode": "22555"
+                                },
+                                "PreviousPrice":{
+                                    "Amount": 15.0,
+                                    "Currency": "EUR"
+                                },
+                                "NewPrice":{
+                                    "Amount": 11.0,
+                                    "Currency": "EUR"
+                                },
+                                "Reason": {
+                                    "Code":"001",
+                                    "Description":"",
+                                    "Name":""
+                                },
+                                "Descriptions": [
+                                    {
+                                        "Text": "blablabla"
+                                    }
+                                ],
+                                "Employee": {
+                                    "ID": 1
+                                }
+                            }
+                        ],
+                        "Tickets": [
+                            {
+                              "EventID": 1,
+                              "EventName": "Repair",
+                              "EventDateTime": ""
+                            }
+                        ]
+                     }
+                 ],
+                 "SaleForPickup": {
+                    "ItemType": {
+                        "type": ""
+                    },
+                    "Item": {
+                        "type": ""
+                    },
+                    "ItemNotOnFileFlag": false,
+                    "Descriptions": [
+                        {
+                            "Text": "blablabla"
+                        }
+                    ],
+                    "RegularSalesUnitPrice":{
+                        "Amount": 5.0,
+                        "Currency": "EUR"
+                    },
+                    "ActualSalesUnitPrice":{
+                        "Amount": 5.0,
+                        "Currency": "EUR"
+                    },
+                    "ExtendedAmount":{
+                        "Amount": 5.0,
+                        "Currency": "EUR"
+                    },
+                    "Quantity": {
+                        "Quantity": 5
+                    },
+                    "Taxes": [
+                        {
+                            "Amount": {
+                                "Amount": 10,
+                                "Currency": "EUR"
+                            },
+                            "percent": 15,
+                            "taxGroupId": "000145",
+                            "taxJurisdictionId": "00146"
+                        }
+                    ],
+                    "GiftReceiptFlag": true,
+                    "Pickup": {
+                        "Name": {
+                            "FullName": "Fehmi Khenissi"
+                        },
+                        "Note": "nothing",
+                        "TelephoneNumber": {
+                            "Number": "0603166825"
+                        },
+                        "PreferredDateTime": ""
+                    },
+                    "RetailPriceModifier": [
+                        {
+                            "VoidFlag": false,
+                            "MethodCode": "0015",
+                            "SequenceNumber": 0,
+                            "Amount":{
+                                "Amount": 5.0,
+                                "Currency": "EUR"
+                            },
+                            "PromotionID":"000320",
+                            "Coupon": {
+                                "ScanCode": "22555"
+                            },
+                            "PreviousPrice":{
+                                "Amount": 15.0,
+                                "Currency": "EUR"
+                            },
+                            "NewPrice":{
+                                "Amount": 11.0,
+                                "Currency": "EUR"
+                            },
+                            "Reason": {
+                                "Code":"001",
+                                "Description":"",
+                                "Name":""
+                            },
+                            "Descriptions": [
+                                {
+                                    "Text": "blablabla"
+                                }
+                            ],
+                            "Employee": {
+                                "ID": 1
+                            }
+                        }
+                    ]
+                 },
+                 "StoredValueFundSale": {
+                    "ItemType": {
+                        "type": ""
+                    },
+                    "Item": {
+                        "type": ""
+                    },
+                    "Action":"",
+                    "TypeCode":"fkh",
+                    "UnitListPrice":{
+                        "Amount": 5.0,
+                        "Currency": "EUR"
+                    },
+                    "RegularSalesUnitPrice":{
+                        "Amount": 5.0,
+                        "Currency": "EUR"
+                    },
+                    "ActualSalesUnitPrice":{
+                        "Amount": 5.0,
+                        "Currency": "EUR"
+                    },
+                    "ExtendedAmount":{
+                        "Amount": 5.0,
+                        "Currency": "EUR"
+                    },
+                    "Descriptions": [
+                        {
+                            "Text": "blablabla"
+                        }
+                    ],
+                    "Quantity": {
+                        "Quantity": 5
+                    },
+                    "Instruments": [
+                        {
+                            "FaceValueAmount": {
+                                "Amount": 10,
+                                "Currency": "EUR"
+                            },
+                            "SerialNumber": "SN001552"
+                        }
+                    ],
+                    "Taxes": [
+                        {
+                            "Amount": {
+                                "Amount": 10,
+                                "Currency": "EUR"
+                            },
+                            "percent": 15,
+                            "taxGroupId": "000145",
+                            "taxJurisdictionId": "00146"
+                        }
+                    ],
+                    "GiftReceiptFlag": true
+                 },
+                 "Return": [
+                    {
+                        "Associates": [
+                        {
+                            "ID": 1
+                        }
+                        ],
+                        "SerialNumbers": [
+                            {
+                                "ID": 11
+                            }
+                        ],
+                        "ItemType": {
+                            "type": ""
+                        },
+                        "Item": {
+                            "type": ""
+                        },
+                        "Type": "type001",
+                        "Descriptions": [
+                            {
+                                "Text": "blablabla"
+                            }
+                        ],
+                        "RegularSalesUnitPrice":{
+                            "Amount": 125.0,
+                            "Currency": "EUR"
+                        },
+                        "ActualSalesUnitPrice":{
+                            "Amount": 120.0,
+                            "Currency": "EUR"
+                        } ,
+                        "ExtendedAmount":{
+                            "Amount": 5.0,
+                            "Currency": "EUR"
+                        },
+                        "Quantity": {
+                            "Quantity": 5
+                        },
+                        "Taxes": [
+                            {
+                                "Amount": {
+                                    "Amount": 10,
+                                    "Currency": "EUR"
+                                },
+                                "percent": 15,
+                                "taxGroupId": "000145",
+                                "taxJurisdictionId": "00146"
+                            }
+                        ],
+                        "RetailPriceModifiers": [
+                            {
+                                "VoidFlag": false,
+                                "MethodCode": "00014",
+                                "SequenceNumber": 444,
+                                "Amount": {
+                                    "Amount": 105.0,
+                                    "Currency": "EUR"
+                                },
+                                "PromotionID": "000320",
+                                "Coupon": {
+                                    "ScanCode": "22555"
+                                },
+                                "PreviousPrice": {
+                                    "Amount": 150.0,
+                                    "Currency": "EUR"
+                                },
+                                "NewPrice": {
+                                    "Amount": 100.0,
+                                    "Currency": "EUR"
+                                },
+                                "Reason": {
+                                    "Code": "0021",
+                                    "Description":"",
+                                    "Name": "PromoSummer"
+                                },
+                                "Descriptions": [
+                                    {
+                                       "Text": "blablabla"
+                                    }
+                                ],
+                                "Employee": {
+                                    "ID": 1
+                                }
+                            }
+                        ],
+                        "eCommerceID": "000015",
+                        "TransactionLink": [
+                            {
+                                "ReasonCode": "Reason",
+                                "BusinessDayDate": "",
+                                "BusinessUnit": {
+                                    "Brand": "brd",
+                                    "Country": "USA",
+                                    "LocationType": "Regional",
+                                    "LocationCode": "US"
+                                },
+                                "Workstation": {
+                                    "ID": 1254
+                                },
+                                "SequenceNumber": 125511,
+                                "LineItemSequenceNumber": 2251,
+                                "VerificationType": "Verif",
+                                "Disposal": {
+                                    "Method": "Manual"
+                                },
+                                "Reason": {
+                                    "Code": "001",
+                                    "Description": "",
+                                    "Name": ""
+                                },
+                                "HasReceipt": true,
+                                "ItemNotOnFileFlag": false
+                            }
+                        ]
+                    }
+                 ],
+                 "Tenders": [
+                    {
+                        "TenderType": "GiftCard",
+                        "TypeCode": "0003",
+                        "SubTenderType":"",
+                        "CreditDebit": {
+                            "CardType": "BC"
+                        },
+                        "Amount": {
+                            "Amount": 125.0,
+                            "Currency": "EUR"
+                        },
+                        "Voucher": {
+                            "TypeCode": "0003",
+                            "SerialNumber": "01552224FS3",
+                            "Descriptions": [
+                                {
+                                   "Text": "blablabla"
+                                }
+                            ],
+                            "FaceValueAmount": {
+                                "Amount": 120.0,
+                                "Currency": "EUR"
+                            }
+                         },
+                         "ComplimentaryTender": {
+                             "Account": "acc0001",
+                             "Purchaser": "Nikers",
+                             "RequestedBy": "Melodie Bosch",
+                             "Department": "IT",
+                             "Reason": "UNKNOWN"
+                         },
+                         "StoreAccount": {
+                             "AccountName": "acc001-fkh"
+                         }
+                    }
+                 ],
+                 "TenderChange":[
+                     {
+                         "TenderType": "Cash",
+                         "TypeCode": "0001",
+                         "Amount": {
+                             "Amount": 125.0,
+                             "Currency": "EUR"
+                         },
+                         "Voucher": {
+                            "TypeCode": "0002",
+                            "SerialNumber": "01552224FS",
+                            "Descriptions": [
+                                {
+                                   "Text": "blablabla"
+                                }
+                            ],
+                            "FaceValueAmount": {
+                                "Amount": 120.0,
+                                "Currency": "EUR"
+                            }
+                         }
+                     }
+                 ]
+
+            }
+        ],
+        "Customers": [
+            {
+                "Name": {
+                    "FullName": "Fehmi Khenissi"
+                },
+                "Version": "0001",
+                "TransactionLink": {
+                    "ReasonCode": "Reason",
+                    "BusinessDayDate": "",
+                    "BusinessUnit": {
+                        "Brand": "brd",
+                        "Country": "USA",
+                        "LocationType": "Regional",
+                        "LocationCode": "US"
+                    },
+                    "Workstation": {
+                        "ID": 1254
+                    },
+                    "SequenceNumber": 125511,
+                    "LineItemSequenceNumber": 2251,
+                    "VerificationType": "Verif",
+                    "Disposal": {
+                        "Method": "Manual"
+                    },
+                    "Reason": {
+                        "Code": "001",
+                        "Description": "",
+                        "Name": ""
+                    },
+                    "HasReceipt": true,
+                    "ItemNotOnFileFlag": false
+                }
+            }
+        ],
+        "Totals": {
+            "Amount": 250.0,
+            "TotalType": "Cash"
+        },
+        "Receipts": {
+            "print": true
+        },
+        "SourcePos": {
+            "Type": "Mobile",
+            "Version": "2019.001"
+        },
+        "Survey": {
+            "SurveyCode": "0000000001X"
+        }
+    }
+}

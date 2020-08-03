@@ -30,7 +30,7 @@ public class Pickup {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "TelephoneNumber", referencedColumnName = "PickupId")
-	private Number telephoneNumber;
+	private NumberOf telephoneNumber;
 
 	@Column(name = "PreferredDateTime")
 	private Date PreferredDateTime;
@@ -67,11 +67,11 @@ public class Pickup {
 		this.note = note;
 	}
 
-	public Number getTelephoneNumber() {
+	public NumberOf getTelephoneNumber() {
 		return telephoneNumber;
 	}
 
-	public void setTelephoneNumber(Number telephoneNumber) {
+	public void setTelephoneNumber(NumberOf telephoneNumber) {
 		this.telephoneNumber = telephoneNumber;
 	}
 

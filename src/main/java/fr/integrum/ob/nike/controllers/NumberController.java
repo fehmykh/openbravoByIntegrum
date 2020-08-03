@@ -9,27 +9,30 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.integrum.ob.nike.repositories.NumberRepository;
+import fr.integrum.ob.nike.retailmodels.NumberOf;
 
 @RestController
+@RequestMapping(value = "/nk")
 public class NumberController {
-	
+
 	private static Logger LOG = LoggerFactory.getLogger(NumberController.class);
 
 	@Autowired
 	private NumberRepository numberRepository;
-	
+
 	@GetMapping("/numbers")
-    public Page<Number> getNumbers(Pageable pageable) {
-        return numberRepository.findAll(pageable);
-    }
-	
+	public Page<NumberOf> getNumbers(Pageable pageable) {
+		return numberRepository.findAll(pageable);
+	}
+
 	@PostMapping("/numbers")
-    public Number createNumber(@Validated @RequestBody Number number) {
+	public NumberOf createNumber(@Validated @RequestBody NumberOf number) {
 		LOG.info("Number created. ");
-        return numberRepository.save(number);
-    }
+		return numberRepository.save(number);
+	}
 
 }

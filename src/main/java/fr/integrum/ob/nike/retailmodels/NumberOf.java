@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "NK_Names")
-public class Number {
+public class NumberOf {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,7 +22,7 @@ public class Number {
 	@Column(name = "PickupId")
 	private Integer pickupId;
 
-	public Number() {
+	public NumberOf() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

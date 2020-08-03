@@ -9,12 +9,14 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.integrum.ob.nike.repositories.PickupRepository;
 import fr.integrum.ob.nike.retailmodels.Pickup;
 
 @RestController
+@RequestMapping(value = "/nk")
 public class PickupController {
 	
 	private static Logger LOG = LoggerFactory.getLogger(PickupController.class);

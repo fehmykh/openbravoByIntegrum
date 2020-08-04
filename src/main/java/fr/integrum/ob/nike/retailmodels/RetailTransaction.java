@@ -36,19 +36,19 @@ public class RetailTransaction {
 	private List<Customer> customers;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "totals", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "retailTransactionId", referencedColumnName = "retailTransactionId")
 	private Total totals;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "receipts", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "retailTransactionId", referencedColumnName = "retailTransactionId")
 	private Receipt receipts;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "sourcePos", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "retailTransactionId", referencedColumnName = "retailTransactionId")
 	private SourcePos sourcePos;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "survey", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "retailTransactionId", referencedColumnName = "retailTransactionId")
 	private Survey survey;
 
 	@Column(name = "transactionId")

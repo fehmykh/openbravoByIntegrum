@@ -3,7 +3,6 @@ package fr.integrum.ob.nike.retailmodels;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -45,14 +44,6 @@ public class ComplimentaryTender {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getComplimentaryTenderId() {
-		return complimentaryTenderId;
-	}
-
-	public void setComplimentaryTenderId(String complimentaryTenderId) {
-		this.complimentaryTenderId = complimentaryTenderId;
-	}
-
 	public String getAccount() {
 		return account;
 	}
@@ -91,22 +82,6 @@ public class ComplimentaryTender {
 
 	public void setReason(String reason) {
 		Reason = reason;
-	}
-
-	public String getEmployeeID() {
-		return employeeID;
-	}
-
-	public void setEmployeeID(String employeeID) {
-		this.employeeID = employeeID;
-	}
-
-	public String getTenderID() {
-		return tenderID;
-	}
-
-	public void setTenderID(String tenderID) {
-		this.tenderID = tenderID;
 	}
 
 }

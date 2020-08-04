@@ -4,7 +4,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -17,8 +16,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Tender {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "TenderID")
 	private String tenderId;
 
@@ -34,7 +33,7 @@ public class Tender {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "CreditDebit", referencedColumnName = "TenderID")
 	private CreditDebit creditDebit;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Amount", referencedColumnName = "TenderID")
 	private Amount amount;
@@ -57,14 +56,6 @@ public class Tender {
 	public Tender() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getTenderId() {
-		return tenderId;
-	}
-
-	public void setTenderId(String tenderId) {
-		this.tenderId = tenderId;
 	}
 
 	public String getTenderType() {
@@ -129,14 +120,6 @@ public class Tender {
 
 	public void setStoreAccount(StoreAccount storeAccount) {
 		this.storeAccount = storeAccount;
-	}
-
-	public String getLineItemId() {
-		return lineItemId;
-	}
-
-	public void setLineItemId(String lineItemId) {
-		this.lineItemId = lineItemId;
 	}
 
 }

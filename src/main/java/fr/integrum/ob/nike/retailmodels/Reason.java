@@ -3,7 +3,6 @@ package fr.integrum.ob.nike.retailmodels;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,8 +13,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Reason {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "reason_id")
 	private String reasonId;
 
@@ -30,21 +29,13 @@ public class Reason {
 
 	@Column(name = "RetailPriceModifiersId")
 	private String retailPriceModifiersId;
-	
+
 	@Column(name = "TransactionLinkId")
 	private String transactionLinkId;
-	
+
 	public Reason() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getReasonId() {
-		return reasonId;
-	}
-
-	public void setReasonId(String reasonId) {
-		this.reasonId = reasonId;
 	}
 
 	public String getCode() {
@@ -69,22 +60,6 @@ public class Reason {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getRetailPriceModifiersId() {
-		return retailPriceModifiersId;
-	}
-
-	public void setRetailPriceModifiersId(String retailPriceModifiersId) {
-		this.retailPriceModifiersId = retailPriceModifiersId;
-	}
-
-	public String getTransactionLinkId() {
-		return transactionLinkId;
-	}
-
-	public void setTransactionLinkId(String transactionLinkId) {
-		this.transactionLinkId = transactionLinkId;
 	}
 
 }

@@ -3,7 +3,6 @@ package fr.integrum.ob.nike.retailmodels;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,10 +13,10 @@ import org.hibernate.annotations.GenericGenerator;
 public class Employee {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "ID")
-	private String employeeId;
+	private String id;
 
 	@Column(name = "RetailPriceModifiersId")
 	private String retailPriceModifiersId;
@@ -28,19 +27,11 @@ public class Employee {
 	}
 
 	public String getEmployeeId() {
-		return employeeId;
+		return id;
 	}
 
 	public void setEmployeeId(String employeeId) {
-		this.employeeId = employeeId;
-	}
-
-	public String getRetailPriceModifiersId() {
-		return retailPriceModifiersId;
-	}
-
-	public void setRetailPriceModifiersId(String retailPriceModifiersId) {
-		this.retailPriceModifiersId = retailPriceModifiersId;
+		this.id = employeeId;
 	}
 
 }

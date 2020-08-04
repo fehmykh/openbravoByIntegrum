@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -20,8 +19,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Sale {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "SaleId")
 	private String saleId;
 
@@ -88,14 +87,6 @@ public class Sale {
 	public Sale() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getSaleId() {
-		return saleId;
-	}
-
-	public void setSaleId(String saleId) {
-		this.saleId = saleId;
 	}
 
 	public List<SerialNumber> getSerialNumbers() {
@@ -216,14 +207,6 @@ public class Sale {
 
 	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
-	}
-
-	public String getLineItemId() {
-		return lineItemId;
-	}
-
-	public void setLineItemId(String lineItemId) {
-		this.lineItemId = lineItemId;
 	}
 
 }

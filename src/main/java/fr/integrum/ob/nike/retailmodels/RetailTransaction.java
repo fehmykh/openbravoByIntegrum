@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -18,9 +17,10 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "NK_RetailTransactions")
 public class RetailTransaction {
+
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "retailTransactionId")
 	private String retailTransactionId;
 
@@ -57,14 +57,6 @@ public class RetailTransaction {
 	public RetailTransaction() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getRetailTransactionId() {
-		return retailTransactionId;
-	}
-
-	public void setRetailTransactionId(String retailTransactionId) {
-		this.retailTransactionId = retailTransactionId;
 	}
 
 	public String getTransactionStatus() {
@@ -121,14 +113,6 @@ public class RetailTransaction {
 
 	public void setSurvey(Survey survey) {
 		this.survey = survey;
-	}
-
-	public String getTransactionId() {
-		return transactionId;
-	}
-
-	public void setTransactionId(String transactionId) {
-		this.transactionId = transactionId;
 	}
 
 }

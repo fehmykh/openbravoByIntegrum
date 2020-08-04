@@ -4,7 +4,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -17,8 +16,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Taxe {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "TaxeId")
 	private String taxeId;
 
@@ -60,22 +59,6 @@ public class Taxe {
 	public Taxe() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getTaxeId() {
-		return taxeId;
-	}
-
-	public String getStoredValueFundSaleId() {
-		return storedValueFundSaleId;
-	}
-
-	public void setStoredValueFundSaleId(String storedValueFundSaleId) {
-		this.storedValueFundSaleId = storedValueFundSaleId;
-	}
-
-	public void setTaxeId(String taxeId) {
-		this.taxeId = taxeId;
 	}
 
 	public String getTaxeType() {
@@ -124,38 +107,6 @@ public class Taxe {
 
 	public void setTaxJurisdictionId(String taxJurisdictionId) {
 		this.taxJurisdictionId = taxJurisdictionId;
-	}
-
-	public String getSaleId() {
-		return saleId;
-	}
-
-	public void setSaleId(String saleId) {
-		this.saleId = saleId;
-	}
-
-	public String getSaleForPickupId() {
-		return saleForPickupId;
-	}
-
-	public void setSaleForPickupId(String saleForPickupId) {
-		this.saleForPickupId = saleForPickupId;
-	}
-
-	public String getReturnID() {
-		return returnID;
-	}
-
-	public void setReturnID(String returnID) {
-		this.returnID = returnID;
-	}
-
-	public String getSaleForDeliveryId() {
-		return saleForDeliveryId;
-	}
-
-	public void setSaleForDeliveryId(String saleForDeliveryId) {
-		this.saleForDeliveryId = saleForDeliveryId;
 	}
 
 }

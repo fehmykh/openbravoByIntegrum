@@ -5,7 +5,6 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,17 +15,17 @@ import org.hibernate.annotations.GenericGenerator;
 public class Ticket {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "EventID")
 	private String eventID;
-	
-	@Column(name="EventName")
+
+	@Column(name = "EventName")
 	private String eventName;
-	
-	@Column(name="EventDateTime")
+
+	@Column(name = "EventDateTime")
 	private Date eventDateTime;
-	
+
 	@Column(name = "SaleId")
 	private String saleId;
 
@@ -59,13 +58,4 @@ public class Ticket {
 		this.eventDateTime = eventDateTime;
 	}
 
-	public String getSaleId() {
-		return saleId;
-	}
-
-	public void setSaleId(String saleId) {
-		this.saleId = saleId;
-	}
-	
-	
 }

@@ -14,8 +14,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class AddresseLine {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "AddresseLineID")
 	private String addresseLineId;
 
@@ -36,21 +36,13 @@ public class AddresseLine {
 
 	@Column(name = "TelephoneNumber")
 	private String telephoneNumber;
-	
+
 	@Column(name = "AddresseID")
 	private String addresseID;
-	
+
 	public AddresseLine() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getAddresseLineId() {
-		return addresseLineId;
-	}
-
-	public void setAddresseLineId(String addresseLineId) {
-		this.addresseLineId = addresseLineId;
 	}
 
 	public Integer getRelativeOrder() {

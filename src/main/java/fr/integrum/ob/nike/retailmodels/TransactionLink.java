@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -19,8 +18,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class TransactionLink {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "TransactionLinkId")
 	private String transactionLinkId;
 
@@ -70,14 +69,6 @@ public class TransactionLink {
 	public TransactionLink() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getTransactionLinkId() {
-		return transactionLinkId;
-	}
-
-	public void setTransactionLinkId(String transactionLinkId) {
-		this.transactionLinkId = transactionLinkId;
 	}
 
 	public String getReasonCode() {
@@ -166,22 +157,6 @@ public class TransactionLink {
 
 	public void setItemNotOnFileFlag(Boolean itemNotOnFileFlag) {
 		this.itemNotOnFileFlag = itemNotOnFileFlag;
-	}
-
-	public String getReturnID() {
-		return returnID;
-	}
-
-	public void setReturnID(String returnID) {
-		this.returnID = returnID;
-	}
-
-	public String getCustomerID() {
-		return customerID;
-	}
-
-	public void setCustomerID(String customerID) {
-		this.customerID = customerID;
 	}
 
 }

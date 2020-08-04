@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -19,8 +18,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "NK_SalesForPickup")
 public class SaleForPickup {
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "SaleForPickupId")
 	private String saleForPickupId;
 
@@ -76,14 +75,6 @@ public class SaleForPickup {
 	public SaleForPickup() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getSaleForPickupId() {
-		return saleForPickupId;
-	}
-
-	public void setSaleForPickupId(String saleForPickupId) {
-		this.saleForPickupId = saleForPickupId;
 	}
 
 	public ItemType getItemType() {
@@ -180,14 +171,6 @@ public class SaleForPickup {
 
 	public void setRetailPriceModifiers(List<RetailPriceModifier> retailPriceModifiers) {
 		this.retailPriceModifiers = retailPriceModifiers;
-	}
-
-	public String getLineItemId() {
-		return lineItemId;
-	}
-
-	public void setLineItemId(String lineItemId) {
-		this.lineItemId = lineItemId;
 	}
 
 }

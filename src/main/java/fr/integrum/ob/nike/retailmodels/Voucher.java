@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -19,8 +18,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Voucher {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "VoucherID")
 	private String voucherId;
 
@@ -43,21 +42,13 @@ public class Voucher {
 
 	@Column(name = "TenderID")
 	private String tenderID;
-	
+
 	@Column(name = "TenderChangeID")
 	private String tenderChangeID;
-	
+
 	public Voucher() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getVoucherId() {
-		return voucherId;
-	}
-
-	public void setVoucherId(String voucherId) {
-		this.voucherId = voucherId;
 	}
 
 	public String getTypeCode() {
@@ -98,22 +89,6 @@ public class Voucher {
 
 	public void setFaceValueAmount(Amount faceValueAmount) {
 		this.faceValueAmount = faceValueAmount;
-	}
-
-	public String getTenderID() {
-		return tenderID;
-	}
-
-	public void setTenderID(String tenderID) {
-		this.tenderID = tenderID;
-	}
-
-	public String getTenderChangeID() {
-		return tenderChangeID;
-	}
-
-	public void setTenderChangeID(String tenderChangeID) {
-		this.tenderChangeID = tenderChangeID;
 	}
 
 }

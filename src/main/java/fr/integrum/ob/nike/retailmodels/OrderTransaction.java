@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -14,23 +13,24 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_OrderTransactions")
 public class OrderTransaction {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "orderTransactionId")
 	private String orderTransactionId;
-	
+
 	@Column(name = "TransactionStatus")
 	private String transactionStatus;
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "orderTransactionId", referencedColumnName = "orderTransactionId")
 	private List<LineItem> lineItems;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Customer", referencedColumnName = "orderTransactionId")
 	private Customer cutomer;
@@ -38,14 +38,6 @@ public class OrderTransaction {
 	public OrderTransaction() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getOrderTransactionId() {
-		return orderTransactionId;
-	}
-
-	public void setOrderTransactionId(String orderTransactionId) {
-		this.orderTransactionId = orderTransactionId;
 	}
 
 	public String getTransactionStatus() {
@@ -71,5 +63,5 @@ public class OrderTransaction {
 	public void setCutomer(Customer cutomer) {
 		this.cutomer = cutomer;
 	}
-	
+
 }

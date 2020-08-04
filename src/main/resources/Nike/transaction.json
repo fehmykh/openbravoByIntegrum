@@ -9,34 +9,33 @@
                 "entryMethod": "Manual",
                 "voidFlag": false,
                 "coupon": {
-                    "ScanCode": "22555"
+                    "scanCode": "22555"
                 },
                 "sequenceNumber": 2,
                 "scanData": [
                     {
-                        "Data": ""
+                        "data": "0000000001"
                     }
                 ],
-                "beginDateTime": "",
-                "endDateTime": "",
+                "beginDateTime": "2020-08-03",
+                "endDateTime": "2020-08-04",
                 "repairID": "2255",
                 "sale": [
                     {
                         "serialNumbers": [
                             {
-                                "ID": 2
                             }
                         ],
                         "associates": [
                             {
-                                "ID": 1
+                             
                             }
                         ],
                         "itemType": {
-                            "type": ""
+                            "type": "Unknown"
                         },
                         "item": {
-                            "type": ""
+                            "type": "Unknown"
                         },
                         "descriptions": [
                             {
@@ -95,8 +94,8 @@
                                 },
                                 "reason": {
                                     "code": "001",
-                                    "description": "",
-                                    "name": ""
+                                    "description": "Unknown",
+                                    "name": "Unknown"
                                 },
                                 "descriptions": [
                                     {
@@ -104,24 +103,23 @@
                                     }
                                 ],
                                 "employee": {
-                                    "id": 1
                                 }
                             }
                         ],
                         "tickets": [
                             {
                                 "eventName": "Repair",
-                                "eventDateTime": ""
+                                "eventDateTime": "2020-08-04"
                             }
                         ]
                     }
                 ],
                 "saleForPickup": {
                     "itemType": {
-                        "type": ""
+                        "type": "Shoes"
                     },
                     "item": {
-                        "type": ""
+                        "type": "Basket"
                     },
                     "itemNotOnFileFlag": false,
                     "descriptions": [
@@ -164,7 +162,7 @@
                         "telephoneNumber": {
                             "number": "0603166825"
                         },
-                        "preferredDateTime": ""
+                        "preferredDateTime": "2020-08-20"
                     },
                     "retailPriceModifier": [
                         {
@@ -189,8 +187,8 @@
                             },
                             "reason": {
                                 "code": "001",
-                                "description": "",
-                                "name": ""
+                                "description": "Unknown",
+                                "name": "Unknown"
                             },
                             "descriptions": [
                                 {
@@ -198,17 +196,16 @@
                                 }
                             ],
                             "employee": {
-                                "id": 1
                             }
                         }
                     ]
                 },
                 "storedValueFundSale": {
                     "itemType": {
-                        "type": ""
+                        "type": "Unknown"
                     },
                     "item": {
-                        "type": ""
+                        "type": "Unknown"
                     },
                     "action": "",
                     "typeCode": "fkh",
@@ -258,19 +255,17 @@
                     {
                         "associates": [
                             {
-                                "id": 1
                             }
                         ],
                         "serialNumbers": [
                             {
-                                "id": 11
                             }
                         ],
                         "itemType": {
-                            "type": ""
+                            "type": "Unknown"
                         },
                         "item": {
-                            "type": ""
+                            "type": "Unknown"
                         },
                         "type": "type001",
                         "descriptions": [
@@ -336,7 +331,6 @@
                                     }
                                 ],
                                 "employee": {
-                                    "id": 1
                                 }
                             }
                         ],
@@ -351,7 +345,6 @@
                                 "locationCode": "US"
                             },
                             "workstation": {
-                                "id": 1254
                             },
                             "sequenceNumber": 125511,
                             "lineItemSequenceNumber": 2251,
@@ -361,8 +354,8 @@
                             },
                             "reason": {
                                 "code": "001",
-                                "description": "",
-                                "name": ""
+                                "description": "Unknown",
+                                "name": "Unknown"
                             },
                             "hasReceipt": true,
                             "itemNotOnFileFlag": false

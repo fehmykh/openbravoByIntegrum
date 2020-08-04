@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -20,8 +19,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Return {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "returnID")
 	private String returnId;
 
@@ -85,14 +84,6 @@ public class Return {
 	public Return() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getReturnId() {
-		return returnId;
-	}
-
-	public void setReturnId(String returnId) {
-		this.returnId = returnId;
 	}
 
 	public List<Associate> getAssociates() {
@@ -197,22 +188,6 @@ public class Return {
 
 	public void seteCommerceID(String eCommerceID) {
 		this.eCommerceID = eCommerceID;
-	}
-
-	public TransactionLink getTransactionLink() {
-		return transactionLink;
-	}
-
-	public void setTransactionLink(TransactionLink transactionLink) {
-		this.transactionLink = transactionLink;
-	}
-
-	public String getLineItemId() {
-		return lineItemId;
-	}
-
-	public void setLineItemId(String lineItemId) {
-		this.lineItemId = lineItemId;
 	}
 
 }

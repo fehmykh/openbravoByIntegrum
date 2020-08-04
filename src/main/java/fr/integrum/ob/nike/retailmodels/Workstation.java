@@ -3,7 +3,6 @@ package fr.integrum.ob.nike.retailmodels;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,10 +13,10 @@ import org.hibernate.annotations.GenericGenerator;
 public class Workstation {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "ID")
-	private String workstationId;
+	private String id;
 
 	@Column(name = "TransactionLinkId")
 	private String transactionLinkId;
@@ -28,19 +27,11 @@ public class Workstation {
 	}
 
 	public String getWorkstationId() {
-		return workstationId;
+		return id;
 	}
 
-	public void setWorkstationId(String workstationId) {
-		this.workstationId = workstationId;
-	}
-
-	public String getTransactionLinkId() {
-		return transactionLinkId;
-	}
-
-	public void setTransactionLinkId(String transactionLinkId) {
-		this.transactionLinkId = transactionLinkId;
+	public void setWorkstationId(String id) {
+		this.id = id;
 	}
 
 }

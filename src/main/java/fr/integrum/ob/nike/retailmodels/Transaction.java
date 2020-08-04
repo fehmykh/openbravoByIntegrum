@@ -16,8 +16,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Transaction {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "transactionId")
 	private String transactionId;
 
@@ -31,14 +31,6 @@ public class Transaction {
 	public Transaction() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getTransactionId() {
-		return transactionId;
-	}
-
-	public void setTransactionId(String transactionId) {
-		this.transactionId = transactionId;
 	}
 
 	public String getTransactionStatus() {

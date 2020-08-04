@@ -17,7 +17,7 @@ public class Associate {
 	@GeneratedValue(generator="system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "ID")
-	private String associateId;
+	private String id;
 
 	@Column(name = "SaleId")
 	private String saleId;
@@ -34,35 +34,11 @@ public class Associate {
 	}
 
 	public String getAssociateId() {
-		return associateId;
+		return id;
 	}
 
 	public void setAssociateId(String associateId) {
-		this.associateId = associateId;
-	}
-
-	public String getSaleId() {
-		return saleId;
-	}
-
-	public void setSaleId(String saleId) {
-		this.saleId = saleId;
-	}
-
-	public String getReturnID() {
-		return returnID;
-	}
-
-	public void setReturnID(String returnID) {
-		this.returnID = returnID;
-	}
-
-	public String getSaleForDeliveryId() {
-		return saleForDeliveryId;
-	}
-
-	public void setSaleForDeliveryId(String saleForDeliveryId) {
-		this.saleForDeliveryId = saleForDeliveryId;
+		this.id = associateId;
 	}
 
 }

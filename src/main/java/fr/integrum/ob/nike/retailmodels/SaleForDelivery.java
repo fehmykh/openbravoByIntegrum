@@ -6,7 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -20,8 +19,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class SaleForDelivery {
 
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "SaleForDeliveryId")
 	private String saleForDeliveryId;
 
@@ -84,14 +83,6 @@ public class SaleForDelivery {
 	public SaleForDelivery() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getSaleForDeliveryId() {
-		return saleForDeliveryId;
-	}
-
-	public void setSaleForDeliveryId(String saleForDeliveryId) {
-		this.saleForDeliveryId = saleForDeliveryId;
 	}
 
 	public List<Associate> getAssociates() {
@@ -204,14 +195,6 @@ public class SaleForDelivery {
 
 	public void setRetailPriceModifiers(List<RetailPriceModifier> retailPriceModifiers) {
 		this.retailPriceModifiers = retailPriceModifiers;
-	}
-
-	public String getLineItemId() {
-		return lineItemId;
-	}
-
-	public void setLineItemId(String lineItemId) {
-		this.lineItemId = lineItemId;
 	}
 
 }

@@ -5,9 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -81,14 +79,6 @@ public class StoredValueFundSale {
 	public StoredValueFundSale() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getStoredValueFundSaleId() {
-		return storedValueFundSaleId;
-	}
-
-	public void setStoredValueFundSaleId(String storedValueFundSaleId) {
-		this.storedValueFundSaleId = storedValueFundSaleId;
 	}
 
 	public ItemType getItemType() {
@@ -197,10 +187,6 @@ public class StoredValueFundSale {
 
 	public String getLineItemId() {
 		return lineItemId;
-	}
-
-	public void setLineItemId(String lineItemId) {
-		this.lineItemId = lineItemId;
 	}
 
 }

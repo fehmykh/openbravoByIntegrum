@@ -4,7 +4,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -16,21 +15,21 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "NK_Instruments")
 public class Instrument {
 	@Id
-	@GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@Column(name = "InstrumentId")
 	private String instrumentId;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "FaceValueAmount", referencedColumnName = "InstrumentId")
 	private Amount faceValueAmount;
-	
-	@Column(name="SerialNumber")
+
+	@Column(name = "SerialNumber")
 	private String serialNumber;
-	
+
 	@Column(name = "StoredValueFundSaleId")
 	private String storedValueFundSaleId;
-	
+
 	public String getStoredValueFundSaleId() {
 		return storedValueFundSaleId;
 	}
@@ -42,14 +41,6 @@ public class Instrument {
 	public Instrument() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public String getInstrumentId() {
-		return instrumentId;
-	}
-
-	public void setInstrumentId(String instrumentId) {
-		this.instrumentId = instrumentId;
 	}
 
 	public Amount getFaceValueAmount() {
@@ -67,6 +58,5 @@ public class Instrument {
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
-	
-	
+
 }

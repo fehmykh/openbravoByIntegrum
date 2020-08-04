@@ -7,31 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_ScanData")
 public class ScanData {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "ID")
-	private Integer employeeId;
+	private String employeeId;
 
 	@Column(name = "Data")
 	private String data;
 
 	@Column(name = "LineItemId")
-	private Integer lineItemId;
+	private String lineItemId;
 
 	public ScanData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(Integer employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 
@@ -43,11 +46,11 @@ public class ScanData {
 		this.data = data;
 	}
 
-	public Integer getLineItemId() {
+	public String getLineItemId() {
 		return lineItemId;
 	}
 
-	public void setLineItemId(Integer lineItemId) {
+	public void setLineItemId(String lineItemId) {
 		this.lineItemId = lineItemId;
 	}
 

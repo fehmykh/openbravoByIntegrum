@@ -7,31 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Surveys")
 public class Survey {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "SurveyID")
-	private Integer surveyId;
+	private String surveyId;
 
 	@Column(name = "SurveyCode")
 	private String surveyCode;
 
 	@Column(name = "retailTransactionId")
-	private Integer retailTransactionId;
+	private String retailTransactionId;
 
 	public Survey() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getSurveyId() {
+	public String getSurveyId() {
 		return surveyId;
 	}
 
-	public void setSurveyId(Integer surveyId) {
+	public void setSurveyId(String surveyId) {
 		this.surveyId = surveyId;
 	}
 
@@ -43,11 +46,11 @@ public class Survey {
 		this.surveyCode = surveyCode;
 	}
 
-	public Integer getRetailTransactionId() {
+	public String getRetailTransactionId() {
 		return retailTransactionId;
 	}
 
-	public void setRetailTransactionId(Integer retailTransactionId) {
+	public void setRetailTransactionId(String retailTransactionId) {
 		this.retailTransactionId = retailTransactionId;
 	}
 	

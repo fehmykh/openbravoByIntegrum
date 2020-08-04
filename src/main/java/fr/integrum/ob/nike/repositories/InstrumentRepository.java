@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.Instrument;
 
-public interface InstrumentRepository extends JpaRepository<Instrument, Integer>{
+public interface InstrumentRepository extends JpaRepository<Instrument, String>{
 
 }

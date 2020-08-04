@@ -13,54 +13,57 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_RetailTransactions")
 public class RetailTransaction {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "retailTransactionId")
-	private Integer retailTransactionId;
+	private String retailTransactionId;
 
-	@Column(name = "TransactionStatus")
+	@Column(name = "transactionStatus")
 	private String transactionStatus;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "LineItems", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "retailTransactionId", referencedColumnName = "retailTransactionId")
 	private List<LineItem> lineItems;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Customers", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "retailTransactionId", referencedColumnName = "retailTransactionId")
 	private List<Customer> customers;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Totals", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "totals", referencedColumnName = "retailTransactionId")
 	private Total totals;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Receipts", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "receipts", referencedColumnName = "retailTransactionId")
 	private Receipt receipts;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "SourcePos", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "sourcePos", referencedColumnName = "retailTransactionId")
 	private SourcePos sourcePos;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Survey", referencedColumnName = "retailTransactionId")
+	@JoinColumn(name = "survey", referencedColumnName = "retailTransactionId")
 	private Survey survey;
 
-	@Column(name = "TransactionId")
-	private Integer transactionId;
+	@Column(name = "transactionId")
+	private String transactionId;
 
 	public RetailTransaction() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getRetailTransactionId() {
+	public String getRetailTransactionId() {
 		return retailTransactionId;
 	}
 
-	public void setRetailTransactionId(Integer retailTransactionId) {
+	public void setRetailTransactionId(String retailTransactionId) {
 		this.retailTransactionId = retailTransactionId;
 	}
 
@@ -120,11 +123,11 @@ public class RetailTransaction {
 		this.survey = survey;
 	}
 
-	public Integer getTransactionId() {
+	public String getTransactionId() {
 		return transactionId;
 	}
 
-	public void setTransactionId(Integer transactionId) {
+	public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;
 	}
 

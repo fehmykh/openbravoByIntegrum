@@ -7,36 +7,39 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Employees")
 public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "ID")
-	private Integer employeeId;
+	private String employeeId;
 
 	@Column(name = "RetailPriceModifiersId")
-	private Integer retailPriceModifiersId;
+	private String retailPriceModifiersId;
 
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(Integer employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 
-	public Integer getRetailPriceModifiersId() {
+	public String getRetailPriceModifiersId() {
 		return retailPriceModifiersId;
 	}
 
-	public void setRetailPriceModifiersId(Integer retailPriceModifiersId) {
+	public void setRetailPriceModifiersId(String retailPriceModifiersId) {
 		this.retailPriceModifiersId = retailPriceModifiersId;
 	}
 

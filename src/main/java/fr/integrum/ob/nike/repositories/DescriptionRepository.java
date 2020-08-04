@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.Description;
 
-public interface DescriptionRepository extends JpaRepository<Description, Integer>{
+public interface DescriptionRepository extends JpaRepository<Description, String>{
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,76 +14,80 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_StoredValueFundSales")
 public class StoredValueFundSale {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "StoredValueFundSaleId")
-	private Integer storedValueFundSaleId;
-	
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	@Column(name = "storedValueFundSaleId")
+	private String storedValueFundSaleId;
+
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ItemType", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "ItemType", referencedColumnName = "storedValueFundSaleId")
 	private ItemType itemType;
-	
+
 	@Column(name = "Action")
 	private String action;
-	
+
 	@Column(name = "TypeCode")
 	private String typeCode;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "UnitListPrice", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "UnitListPrice", referencedColumnName = "storedValueFundSaleId")
 	private Amount unitListPrice;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Item", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "Item", referencedColumnName = "storedValueFundSaleId")
 	private Item item;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Descriptions", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "descriptions", referencedColumnName = "storedValueFundSaleId")
 	private Description descriptions;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "RegularSalesUnitPrice", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "regularSalesUnitPrice", referencedColumnName = "storedValueFundSaleId")
 	private Amount regularSalesUnitPrice;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ActualSalesUnitPrice", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "actualSalesUnitPrice", referencedColumnName = "storedValueFundSaleId")
 	private Amount actualSalesUnitPrice;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ExtendedAmount", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "extendedAmount", referencedColumnName = "storedValueFundSaleId")
 	private Amount extendedAmount;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Quantity", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "quantity", referencedColumnName = "storedValueFundSaleId")
 	private Quantity quantity;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Instruments", referencedColumnName = "StoredValueFundSaleId")
-	private List<Instrument> Instruments;
+	@JoinColumn(name = "storedValueFundSaleId", referencedColumnName = "storedValueFundSaleId")
+	private List<Instrument> instruments;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Taxes", referencedColumnName = "StoredValueFundSaleId")
+	@JoinColumn(name = "storedValueFundSaleId", referencedColumnName = "storedValueFundSaleId")
 	private List<Taxe> taxes;
 
-	@Column(name = "GiftReceiptFlag")
+	@Column(name = "giftReceiptFlag")
 	private Boolean giftReceiptFlag;
-	
-	@Column(name="LineItemId")
-	private Integer lineItemId;
+
+	@Column(name = "LineItemId")
+	private String lineItemId;
 
 	public StoredValueFundSale() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getStoredValueFundSaleId() {
+	public String getStoredValueFundSaleId() {
 		return storedValueFundSaleId;
 	}
 
-	public void setStoredValueFundSaleId(Integer storedValueFundSaleId) {
+	public void setStoredValueFundSaleId(String storedValueFundSaleId) {
 		this.storedValueFundSaleId = storedValueFundSaleId;
 	}
 
@@ -167,11 +172,11 @@ public class StoredValueFundSale {
 	}
 
 	public List<Instrument> getInstruments() {
-		return Instruments;
+		return instruments;
 	}
 
 	public void setInstruments(List<Instrument> instruments) {
-		Instruments = instruments;
+		this.instruments = instruments;
 	}
 
 	public List<Taxe> getTaxes() {
@@ -190,11 +195,11 @@ public class StoredValueFundSale {
 		this.giftReceiptFlag = giftReceiptFlag;
 	}
 
-	public Integer getLineItemId() {
+	public String getLineItemId() {
 		return lineItemId;
 	}
 
-	public void setLineItemId(Integer lineItemId) {
+	public void setLineItemId(String lineItemId) {
 		this.lineItemId = lineItemId;
 	}
 

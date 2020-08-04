@@ -13,14 +13,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_RetailPriceModifiers")
 public class RetailPriceModifier {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "RetailPriceModifiersId")
-	private Integer retailPriceModifiersId;
+	private String retailPriceModifiersId;
 
 	@Column(name = "VoidFlag")
 	private Boolean voidFlag;
@@ -55,7 +58,7 @@ public class RetailPriceModifier {
 	private Reason reason;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Descriptions", referencedColumnName = "RetailPriceModifiersId")
+	@JoinColumn(name = "RetailPriceModifiersId", referencedColumnName = "RetailPriceModifiersId")
 	private List<Description> descriptions;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -63,27 +66,27 @@ public class RetailPriceModifier {
 	private Employee employee;
 
 	@Column(name = "SaleId")
-	private Integer saleId;
+	private String saleId;
 
 	@Column(name = "SaleForPickupId")
-	private Integer saleForPickupId;
+	private String saleForPickupId;
 	
 	@Column(name = "returnID")
-	private Integer returnID;
+	private String returnID;
 	
 	@Column(name = "SaleForDeliveryId")
-	private Integer saleForDeliveryId;
+	private String saleForDeliveryId;
 	
 	public RetailPriceModifier() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getRetailPriceModifiersId() {
+	public String getRetailPriceModifiersId() {
 		return retailPriceModifiersId;
 	}
 
-	public void setRetailPriceModifiersId(Integer retailPriceModifiersId) {
+	public void setRetailPriceModifiersId(String retailPriceModifiersId) {
 		this.retailPriceModifiersId = retailPriceModifiersId;
 	}
 
@@ -175,35 +178,35 @@ public class RetailPriceModifier {
 		this.employee = employee;
 	}
 
-	public Integer getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Integer saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 
-	public Integer getSaleForPickupId() {
+	public String getSaleForPickupId() {
 		return saleForPickupId;
 	}
 
-	public void setSaleForPickupId(Integer saleForPickupId) {
+	public void setSaleForPickupId(String saleForPickupId) {
 		this.saleForPickupId = saleForPickupId;
 	}
 
-	public Integer getReturnID() {
+	public String getReturnID() {
 		return returnID;
 	}
 
-	public void setReturnID(Integer returnID) {
+	public void setReturnID(String returnID) {
 		this.returnID = returnID;
 	}
 
-	public Integer getSaleForDeliveryId() {
+	public String getSaleForDeliveryId() {
 		return saleForDeliveryId;
 	}
 
-	public void setSaleForDeliveryId(Integer saleForDeliveryId) {
+	public void setSaleForDeliveryId(String saleForDeliveryId) {
 		this.saleForDeliveryId = saleForDeliveryId;
 	}
 }

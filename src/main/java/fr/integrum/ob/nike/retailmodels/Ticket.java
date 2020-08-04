@@ -9,14 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Tickets")
 public class Ticket {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "EventID")
-	private Integer eventID;
+	private String eventID;
 	
 	@Column(name="EventName")
 	private String eventName;
@@ -25,18 +28,18 @@ public class Ticket {
 	private Date eventDateTime;
 	
 	@Column(name = "SaleId")
-	private Integer saleId;
+	private String saleId;
 
 	public Ticket() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getEventID() {
+	public String getEventID() {
 		return eventID;
 	}
 
-	public void setEventID(Integer eventID) {
+	public void setEventID(String eventID) {
 		this.eventID = eventID;
 	}
 
@@ -56,11 +59,11 @@ public class Ticket {
 		this.eventDateTime = eventDateTime;
 	}
 
-	public Integer getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Integer saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 	

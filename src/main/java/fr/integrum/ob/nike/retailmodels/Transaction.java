@@ -4,26 +4,28 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "NK_Transactions")
 public class Transaction {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "TransactionId")
-	private Integer transactionId;
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@Column(name = "transactionId")
+	private String transactionId;
 
-	@Column(name = "TransactionStatus")
+	@Column(name = "transactionStatus")
 	private String transactionStatus;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "RetailTransaction", referencedColumnName = "TransactionId")
+	@JoinColumn(name = "retailTransaction", referencedColumnName = "TransactionId")
 	private RetailTransaction retailTransaction;
 
 	public Transaction() {
@@ -31,11 +33,11 @@ public class Transaction {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getTransactionId() {
+	public String getTransactionId() {
 		return transactionId;
 	}
 
-	public void setTransactionId(Integer transactionId) {
+	public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;
 	}
 

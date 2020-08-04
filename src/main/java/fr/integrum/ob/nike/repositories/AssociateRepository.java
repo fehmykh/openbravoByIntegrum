@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.Associate;
 
-public interface AssociateRepository extends JpaRepository<Associate, Integer>{
+public interface AssociateRepository extends JpaRepository<Associate, String>{
 
 }

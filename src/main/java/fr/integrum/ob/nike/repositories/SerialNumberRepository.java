@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.SerialNumber;
 
-public interface SerialNumberRepository extends JpaRepository<SerialNumber, Integer>{
+public interface SerialNumberRepository extends JpaRepository<SerialNumber, String>{
 
 }

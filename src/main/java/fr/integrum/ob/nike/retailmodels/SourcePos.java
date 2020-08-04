@@ -6,14 +6,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "NK_SourcesPos")
 public class SourcePos {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "SourcePosID")
-	private Integer sourcePosId;
+	private String sourcePosId;
 	
 	@Column(name = "Type")
 	private String type;
@@ -22,18 +25,18 @@ public class SourcePos {
 	private String version;
 	
 	@Column(name = "retailTransactionId")
-	private Integer retailTransactionId;
+	private String retailTransactionId;
 
 	public SourcePos() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getSourcePosId() {
+	public String getSourcePosId() {
 		return sourcePosId;
 	}
 
-	public void setSourcePosId(Integer sourcePosId) {
+	public void setSourcePosId(String sourcePosId) {
 		this.sourcePosId = sourcePosId;
 	}
 
@@ -53,11 +56,11 @@ public class SourcePos {
 		this.version = version;
 	}
 
-	public Integer getRetailTransactionId() {
+	public String getRetailTransactionId() {
 		return retailTransactionId;
 	}
 
-	public void setRetailTransactionId(Integer retailTransactionId) {
+	public void setRetailTransactionId(String retailTransactionId) {
 		this.retailTransactionId = retailTransactionId;
 	}
 	

@@ -10,14 +10,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Customers")
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "CustomerID")
-	private Integer customerId;
+	private String customerId;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Name", referencedColumnName = "CustomerID")
@@ -31,21 +34,21 @@ public class Customer {
 	private TransactionLink transactionLink;
 
 	@Column(name = "orderTransactionId")
-	private Integer orderTransactionId;
+	private String orderTransactionId;
 
 	@Column(name = "retailTransactionId")
-	private Integer retailTransactionId;
+	private String retailTransactionId;
 
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getCustomerId() {
+	public String getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Integer customerId) {
+	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
 	}
 
@@ -73,19 +76,19 @@ public class Customer {
 		this.transactionLink = transactionLink;
 	}
 
-	public Integer getOrderTransactionId() {
+	public String getOrderTransactionId() {
 		return orderTransactionId;
 	}
 
-	public void setOrderTransactionId(Integer orderTransactionId) {
+	public void setOrderTransactionId(String orderTransactionId) {
 		this.orderTransactionId = orderTransactionId;
 	}
 
-	public Integer getRetailTransactionId() {
+	public String getRetailTransactionId() {
 		return retailTransactionId;
 	}
 
-	public void setRetailTransactionId(Integer retailTransactionId) {
+	public void setRetailTransactionId(String retailTransactionId) {
 		this.retailTransactionId = retailTransactionId;
 	}
 

@@ -7,44 +7,47 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Descriptions")
 public class Description {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "description_id")
-	private Integer descriptionId;
+	private String descriptionId;
 
 	@Column(name = "Text")
 	private String text;
 
 	@Column(name = "SaleId")
-	private Integer saleId;
+	private String saleId;
 
 	@Column(name = "RetailPriceModifiersId")
-	private Integer retailPriceModifiersId;
+	private String retailPriceModifiersId;
 
 	@Column(name = "SaleForPickupId")
-	private Integer saleForPickupId;
+	private String saleForPickupId;
 	
 	@Column(name = "returnID")
-	private Integer returnID;
+	private String returnID;
 
 	@Column(name = "SaleForDeliveryId")
-	private Integer saleForDeliveryId;
+	private String saleForDeliveryId;
 	
 	@Column(name = "StoredValueFundSaleId")
-	private Integer storedValueFundSaleId;
+	private String storedValueFundSaleId;
 	
 	@Column(name = "VoucherID")
-	private Integer voucherID;
+	private String voucherID;
 	
-	public Integer getVoucherID() {
+	public String getVoucherID() {
 		return voucherID;
 	}
 
-	public void setVoucherID(Integer voucherID) {
+	public void setVoucherID(String voucherID) {
 		this.voucherID = voucherID;
 	}
 
@@ -53,11 +56,11 @@ public class Description {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getDescriptionId() {
+	public String getDescriptionId() {
 		return descriptionId;
 	}
 
-	public void setDescriptionId(Integer descriptionId) {
+	public void setDescriptionId(String descriptionId) {
 		this.descriptionId = descriptionId;
 	}
 
@@ -69,51 +72,51 @@ public class Description {
 		this.text = text;
 	}
 
-	public Integer getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Integer saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 
-	public Integer getRetailPriceModifiersId() {
+	public String getRetailPriceModifiersId() {
 		return retailPriceModifiersId;
 	}
 
-	public void setRetailPriceModifiersId(Integer retailPriceModifiersId) {
+	public void setRetailPriceModifiersId(String retailPriceModifiersId) {
 		this.retailPriceModifiersId = retailPriceModifiersId;
 	}
 
-	public Integer getSaleForPickupId() {
+	public String getSaleForPickupId() {
 		return saleForPickupId;
 	}
 
-	public void setSaleForPickupId(Integer saleForPickupId) {
+	public void setSaleForPickupId(String saleForPickupId) {
 		this.saleForPickupId = saleForPickupId;
 	}
 
-	public Integer getReturnID() {
+	public String getReturnID() {
 		return returnID;
 	}
 
-	public void setReturnID(Integer returnID) {
+	public void setReturnID(String returnID) {
 		this.returnID = returnID;
 	}
 
-	public Integer getSaleForDeliveryId() {
+	public String getSaleForDeliveryId() {
 		return saleForDeliveryId;
 	}
 
-	public void setSaleForDeliveryId(Integer saleForDeliveryId) {
+	public void setSaleForDeliveryId(String saleForDeliveryId) {
 		this.saleForDeliveryId = saleForDeliveryId;
 	}
 
-	public Integer getStoredValueFundSaleId() {
+	public String getStoredValueFundSaleId() {
 		return storedValueFundSaleId;
 	}
 
-	public void setStoredValueFundSaleId(Integer storedValueFundSaleId) {
+	public void setStoredValueFundSaleId(String storedValueFundSaleId) {
 		this.storedValueFundSaleId = storedValueFundSaleId;
 	}
 

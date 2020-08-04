@@ -10,13 +10,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Instruments")
 public class Instrument {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "InstrumentId")
-	private Integer instrumentId;
+	private String instrumentId;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "FaceValueAmount", referencedColumnName = "InstrumentId")
@@ -26,13 +29,13 @@ public class Instrument {
 	private String serialNumber;
 	
 	@Column(name = "StoredValueFundSaleId")
-	private Integer storedValueFundSaleId;
+	private String storedValueFundSaleId;
 	
-	public Integer getStoredValueFundSaleId() {
+	public String getStoredValueFundSaleId() {
 		return storedValueFundSaleId;
 	}
 
-	public void setStoredValueFundSaleId(Integer storedValueFundSaleId) {
+	public void setStoredValueFundSaleId(String storedValueFundSaleId) {
 		this.storedValueFundSaleId = storedValueFundSaleId;
 	}
 
@@ -41,11 +44,11 @@ public class Instrument {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getInstrumentId() {
+	public String getInstrumentId() {
 		return instrumentId;
 	}
 
-	public void setInstrumentId(Integer instrumentId) {
+	public void setInstrumentId(String instrumentId) {
 		this.instrumentId = instrumentId;
 	}
 

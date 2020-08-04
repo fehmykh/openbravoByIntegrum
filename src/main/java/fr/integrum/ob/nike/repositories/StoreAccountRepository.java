@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.StoreAccount;
 
-public interface StoreAccountRepository extends JpaRepository<StoreAccount, Integer>{
+public interface StoreAccountRepository extends JpaRepository<StoreAccount, String>{
 
 }

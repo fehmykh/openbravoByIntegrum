@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.NumberOf;
 
-public interface NumberRepository extends JpaRepository<NumberOf, Integer>{
+public interface NumberRepository extends JpaRepository<NumberOf, String>{
 
 }

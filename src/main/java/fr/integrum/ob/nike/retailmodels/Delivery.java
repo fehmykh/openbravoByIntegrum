@@ -13,36 +13,39 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Deliveries")
 public class Delivery {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "DeliveryID")
-	private Integer deliveryId;
+	private String deliveryId;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Name", referencedColumnName = "DeliveryID")
 	private Name name;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Addresses", referencedColumnName = "DeliveryID")
+	@JoinColumn(name = "DeliveryID", referencedColumnName = "DeliveryID")
 	private List<Addresse> addresses;
 
 	@Column(name = "SaleForDeliveryId")
-	private Integer saleForDeliveryId;
+	private String saleForDeliveryId;
 
 	public Delivery() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getDeliveryId() {
+	public String getDeliveryId() {
 		return deliveryId;
 	}
 
-	public void setDeliveryId(Integer deliveryId) {
+	public void setDeliveryId(String deliveryId) {
 		this.deliveryId = deliveryId;
 	}
 
@@ -62,11 +65,11 @@ public class Delivery {
 		this.addresses = addresses;
 	}
 
-	public Integer getSaleForDeliveryId() {
+	public String getSaleForDeliveryId() {
 		return saleForDeliveryId;
 	}
 
-	public void setSaleForDeliveryId(Integer saleForDeliveryId) {
+	public void setSaleForDeliveryId(String saleForDeliveryId) {
 		this.saleForDeliveryId = saleForDeliveryId;
 	}
 }

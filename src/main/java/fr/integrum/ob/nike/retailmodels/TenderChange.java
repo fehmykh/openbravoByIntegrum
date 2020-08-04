@@ -10,14 +10,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_TenderChanges")
 public class TenderChange {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "TenderChangeID")
-	private Integer tenderChangeId;
+	private String tenderChangeId;
 
 	@Column(name = "TenderType")
 	private String tenderType;
@@ -34,18 +37,18 @@ public class TenderChange {
 	private Voucher voucher;
 
 	@Column(name = "LineItemId")
-	private Integer lineItemId;
+	private String lineItemId;
 
 	public TenderChange() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getTenderChangeId() {
+	public String getTenderChangeId() {
 		return tenderChangeId;
 	}
 
-	public void setTenderChangeId(Integer tenderChangeId) {
+	public void setTenderChangeId(String tenderChangeId) {
 		this.tenderChangeId = tenderChangeId;
 	}
 
@@ -81,11 +84,11 @@ public class TenderChange {
 		this.voucher = voucher;
 	}
 
-	public Integer getLineItemId() {
+	public String getLineItemId() {
 		return lineItemId;
 	}
 
-	public void setLineItemId(Integer lineItemId) {
+	public void setLineItemId(String lineItemId) {
 		this.lineItemId = lineItemId;
 	}
 

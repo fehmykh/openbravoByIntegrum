@@ -7,47 +7,50 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_SerialNumbers")
 public class SerialNumber {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "ID")
-	private Integer serialNumberId;
+	private String serialNumberId;
 
 	@Column(name = "SaleId")
-	private Integer saleId;
+	private String saleId;
 
 	@Column(name = "returnID")
-	private Integer returnID;
+	private String returnID;
 
 	public SerialNumber() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getSerialNumberId() {
+	public String getSerialNumberId() {
 		return serialNumberId;
 	}
 
-	public void setSerialNumberId(Integer serialNumberId) {
+	public void setSerialNumberId(String serialNumberId) {
 		this.serialNumberId = serialNumberId;
 	}
 
-	public Integer getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Integer saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 
-	public Integer getReturnID() {
+	public String getReturnID() {
 		return returnID;
 	}
 
-	public void setReturnID(Integer returnID) {
+	public void setReturnID(String returnID) {
 		this.returnID = returnID;
 	}
 

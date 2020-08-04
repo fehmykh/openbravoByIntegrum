@@ -10,14 +10,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Taxes")
 public class Taxe {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "TaxeId")
-	private Integer taxeId;
+	private String taxeId;
 
 	@Column
 	private String TaxeType;
@@ -30,48 +33,48 @@ public class Taxe {
 	@JoinColumn(name = "Amount", referencedColumnName = "TaxeId")
 	private Amount amount;
 
-	@Column
+	@Column(name = "Percent")
 	private Float percent;
 
-	@Column
+	@Column(name = "TaxGroupId")
 	private String taxGroupId;
 
-	@Column
+	@Column(name = "TaxJurisdictionId")
 	private String taxJurisdictionId;
 
 	@Column(name = "SaleId")
-	private Integer saleId;
+	private String saleId;
 
 	@Column(name = "SaleForPickupId")
-	private Integer saleForPickupId;
+	private String saleForPickupId;
 
 	@Column(name = "returnID")
-	private Integer returnID;
+	private String returnID;
 
 	@Column(name = "SaleForDeliveryId")
-	private Integer saleForDeliveryId;
+	private String saleForDeliveryId;
 
 	@Column(name = "StoredValueFundSaleId")
-	private Integer storedValueFundSaleId;
+	private String storedValueFundSaleId;
 
 	public Taxe() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getTaxeId() {
+	public String getTaxeId() {
 		return taxeId;
 	}
 
-	public Integer getStoredValueFundSaleId() {
+	public String getStoredValueFundSaleId() {
 		return storedValueFundSaleId;
 	}
 
-	public void setStoredValueFundSaleId(Integer storedValueFundSaleId) {
+	public void setStoredValueFundSaleId(String storedValueFundSaleId) {
 		this.storedValueFundSaleId = storedValueFundSaleId;
 	}
 
-	public void setTaxeId(Integer taxeId) {
+	public void setTaxeId(String taxeId) {
 		this.taxeId = taxeId;
 	}
 
@@ -123,35 +126,35 @@ public class Taxe {
 		this.taxJurisdictionId = taxJurisdictionId;
 	}
 
-	public Integer getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Integer saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 
-	public Integer getSaleForPickupId() {
+	public String getSaleForPickupId() {
 		return saleForPickupId;
 	}
 
-	public void setSaleForPickupId(Integer saleForPickupId) {
+	public void setSaleForPickupId(String saleForPickupId) {
 		this.saleForPickupId = saleForPickupId;
 	}
 
-	public Integer getReturnID() {
+	public String getReturnID() {
 		return returnID;
 	}
 
-	public void setReturnID(Integer returnID) {
+	public void setReturnID(String returnID) {
 		this.returnID = returnID;
 	}
 
-	public Integer getSaleForDeliveryId() {
+	public String getSaleForDeliveryId() {
 		return saleForDeliveryId;
 	}
 
-	public void setSaleForDeliveryId(Integer saleForDeliveryId) {
+	public void setSaleForDeliveryId(String saleForDeliveryId) {
 		this.saleForDeliveryId = saleForDeliveryId;
 	}
 

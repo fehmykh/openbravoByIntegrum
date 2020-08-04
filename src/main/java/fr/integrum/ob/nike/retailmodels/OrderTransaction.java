@@ -12,20 +12,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "NK_OrderTransactions")
 public class OrderTransaction {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "orderTransactionId")
-	private Integer orderTransactionId;
+	private String orderTransactionId;
 	
 	@Column(name = "TransactionStatus")
 	private String transactionStatus;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "LineItems", referencedColumnName = "orderTransactionId")
+	@JoinColumn(name = "orderTransactionId", referencedColumnName = "orderTransactionId")
 	private List<LineItem> lineItems;
 	
 	@OneToOne(cascade = CascadeType.ALL)
@@ -37,11 +40,11 @@ public class OrderTransaction {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getOrderTransactionId() {
+	public String getOrderTransactionId() {
 		return orderTransactionId;
 	}
 
-	public void setOrderTransactionId(Integer orderTransactionId) {
+	public void setOrderTransactionId(String orderTransactionId) {
 		this.orderTransactionId = orderTransactionId;
 	}
 

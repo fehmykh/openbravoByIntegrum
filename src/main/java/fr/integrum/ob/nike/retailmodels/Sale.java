@@ -13,21 +13,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Sales")
 public class Sale {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "SaleId")
-	private Integer saleId;
+	private String saleId;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "SerialNumbers", referencedColumnName = "SaleId")
+	@JoinColumn(name = "SaleId", referencedColumnName = "SaleId")
 	private List<SerialNumber> serialNumbers;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Associates", referencedColumnName = "SaleId")
+	@JoinColumn(name = "SaleId", referencedColumnName = "SaleId")
 	private List<Associate> associates;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -39,7 +42,7 @@ public class Sale {
 	private Item item;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Descriptions", referencedColumnName = "SaleId")
+	@JoinColumn(name = "SaleId", referencedColumnName = "SaleId")
 	private List<Description> descriptions;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -59,7 +62,7 @@ public class Sale {
 	private Quantity quantity;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Taxes", referencedColumnName = "SaleId")
+	@JoinColumn(name = "SaleId", referencedColumnName = "SaleId")
 	private List<Taxe> taxes;
 
 	@Column(name = "eCommerceID")
@@ -72,26 +75,26 @@ public class Sale {
 	private Boolean itemNotOnFileFlag;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "RetailPriceModifiers", referencedColumnName = "SaleId")
+	@JoinColumn(name = "SaleId", referencedColumnName = "SaleId")
 	private List<RetailPriceModifier> retailPriceModifiers;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Tickets", referencedColumnName = "SaleId")
+	@JoinColumn(name = "SaleId", referencedColumnName = "SaleId")
 	private List<Ticket> tickets;
 
 	@Column(name = "LineItemId")
-	private Integer lineItemId;
+	private String lineItemId;
 
 	public Sale() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Integer saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 
@@ -215,11 +218,11 @@ public class Sale {
 		this.tickets = tickets;
 	}
 
-	public Integer getLineItemId() {
+	public String getLineItemId() {
 		return lineItemId;
 	}
 
-	public void setLineItemId(Integer lineItemId) {
+	public void setLineItemId(String lineItemId) {
 		this.lineItemId = lineItemId;
 	}
 

@@ -7,58 +7,61 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Associates")
 public class Associate {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "ID")
-	private Integer associateId;
+	private String associateId;
 
 	@Column(name = "SaleId")
-	private Integer saleId;
+	private String saleId;
 
 	@Column(name = "returnID")
-	private Integer returnID;
+	private String returnID;
 	
 	@Column(name = "SaleForDeliveryId")
-	private Integer saleForDeliveryId;
+	private String saleForDeliveryId;
 	
 	public Associate() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getAssociateId() {
+	public String getAssociateId() {
 		return associateId;
 	}
 
-	public void setAssociateId(Integer associateId) {
+	public void setAssociateId(String associateId) {
 		this.associateId = associateId;
 	}
 
-	public Integer getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Integer saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 
-	public Integer getReturnID() {
+	public String getReturnID() {
 		return returnID;
 	}
 
-	public void setReturnID(Integer returnID) {
+	public void setReturnID(String returnID) {
 		this.returnID = returnID;
 	}
 
-	public Integer getSaleForDeliveryId() {
+	public String getSaleForDeliveryId() {
 		return saleForDeliveryId;
 	}
 
-	public void setSaleForDeliveryId(Integer saleForDeliveryId) {
+	public void setSaleForDeliveryId(String saleForDeliveryId) {
 		this.saleForDeliveryId = saleForDeliveryId;
 	}
 

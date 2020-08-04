@@ -7,14 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Business_Unit")
 public class BusinessUnit {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "UnitID")
-	private Integer unitId;
+	private String unitId;
 
 	@Column(name = "Brand")
 	private String brand;
@@ -29,18 +32,18 @@ public class BusinessUnit {
 	private String locationCode;
 	
 	@Column(name = "TransactionLinkId")
-	private Integer transactionLinkId;
+	private String transactionLinkId;
 	
 	public BusinessUnit() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getUnitId() {
+	public String getUnitId() {
 		return unitId;
 	}
 
-	public void setUnitId(Integer unitId) {
+	public void setUnitId(String unitId) {
 		this.unitId = unitId;
 	}
 
@@ -76,11 +79,11 @@ public class BusinessUnit {
 		this.locationCode = locationCode;
 	}
 
-	public Integer getTransactionLinkId() {
+	public String getTransactionLinkId() {
 		return transactionLinkId;
 	}
 
-	public void setTransactionLinkId(Integer transactionLinkId) {
+	public void setTransactionLinkId(String transactionLinkId) {
 		this.transactionLinkId = transactionLinkId;
 	}
 

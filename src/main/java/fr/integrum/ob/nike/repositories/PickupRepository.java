@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.Pickup;
 
-public interface PickupRepository extends JpaRepository<Pickup, Integer>{
+public interface PickupRepository extends JpaRepository<Pickup, String>{
 
 }

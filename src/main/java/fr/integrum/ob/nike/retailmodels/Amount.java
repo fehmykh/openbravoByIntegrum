@@ -7,14 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Amounts")
 public class Amount {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "AmountID")
-	private Integer amountId;
+	private String amountId;
 
 	@Column(name = "Amount")
 	private Double amount;
@@ -23,56 +26,56 @@ public class Amount {
 	private String currency;
 
 	@Column(name = "SaleId")
-	private Integer saleId;
+	private String saleId;
 
 	@Column(name = "RetailPriceModifiersId")
-	private Integer retailPriceModifiersId;
+	private String retailPriceModifiersId;
 
 	@Column(name = "TaxeId")
-	private Integer taxeId;
+	private String taxeId;
 
 	@Column(name = "SaleForPickupId")
-	private Integer saleForPickupId;
+	private String saleForPickupId;
 
 	@Column(name = "TenderID")
-	private Integer tenderID;
+	private String tenderID;
 
 	@Column(name = "TenderChangeID")
-	private Integer tenderChangeID;
+	private String tenderChangeID;
 
 	@Column(name = "returnID")
-	private Integer returnID;
+	private String returnID;
 
 	@Column(name = "SaleForDeliveryId")
-	private Integer saleForDeliveryId;
+	private String saleForDeliveryId;
 
 	@Column(name = "InstrumentId")
-	private Integer instrumentId;
+	private String instrumentId;
 
 	@Column(name = "StoredValueFundSaleId")
-	private Integer storedValueFundSaleId;
+	private String storedValueFundSaleId;
 
 	@Column(name = "VoucherID")
-	private Integer voucherID;
+	private String voucherID;
 
 	public Amount() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getVoucherID() {
+	public String getVoucherID() {
 		return voucherID;
 	}
 
-	public void setVoucherID(Integer voucherID) {
+	public void setVoucherID(String voucherID) {
 		this.voucherID = voucherID;
 	}
 
-	public Integer getAmountId() {
+	public String getAmountId() {
 		return amountId;
 	}
 
-	public void setAmountId(Integer amountId) {
+	public void setAmountId(String amountId) {
 		this.amountId = amountId;
 	}
 
@@ -92,83 +95,83 @@ public class Amount {
 		this.currency = currency;
 	}
 
-	public Integer getSaleId() {
+	public String getSaleId() {
 		return saleId;
 	}
 
-	public void setSaleId(Integer saleId) {
+	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
 
-	public Integer getRetailPriceModifiersId() {
+	public String getRetailPriceModifiersId() {
 		return retailPriceModifiersId;
 	}
 
-	public void setRetailPriceModifiersId(Integer retailPriceModifiersId) {
+	public void setRetailPriceModifiersId(String retailPriceModifiersId) {
 		this.retailPriceModifiersId = retailPriceModifiersId;
 	}
 
-	public Integer getTaxeId() {
+	public String getTaxeId() {
 		return taxeId;
 	}
 
-	public void setTaxeId(Integer taxeId) {
+	public void setTaxeId(String taxeId) {
 		this.taxeId = taxeId;
 	}
 
-	public Integer getSaleForPickupId() {
+	public String getSaleForPickupId() {
 		return saleForPickupId;
 	}
 
-	public void setSaleForPickupId(Integer saleForPickupId) {
+	public void setSaleForPickupId(String saleForPickupId) {
 		this.saleForPickupId = saleForPickupId;
 	}
 
-	public Integer getTenderID() {
+	public String getTenderID() {
 		return tenderID;
 	}
 
-	public void setTenderID(Integer tenderID) {
+	public void setTenderID(String tenderID) {
 		this.tenderID = tenderID;
 	}
 
-	public Integer getTenderChangeID() {
+	public String getTenderChangeID() {
 		return tenderChangeID;
 	}
 
-	public void setTenderChangeID(Integer tenderChangeID) {
+	public void setTenderChangeID(String tenderChangeID) {
 		this.tenderChangeID = tenderChangeID;
 	}
 
-	public Integer getReturnID() {
+	public String getReturnID() {
 		return returnID;
 	}
 
-	public void setReturnID(Integer returnID) {
+	public void setReturnID(String returnID) {
 		this.returnID = returnID;
 	}
 
-	public Integer getSaleForDeliveryId() {
+	public String getSaleForDeliveryId() {
 		return saleForDeliveryId;
 	}
 
-	public void setSaleForDeliveryId(Integer saleForDeliveryId) {
+	public void setSaleForDeliveryId(String saleForDeliveryId) {
 		this.saleForDeliveryId = saleForDeliveryId;
 	}
 
-	public Integer getInstrumentId() {
+	public String getInstrumentId() {
 		return instrumentId;
 	}
 
-	public void setInstrumentId(Integer instrumentId) {
+	public void setInstrumentId(String instrumentId) {
 		this.instrumentId = instrumentId;
 	}
 
-	public Integer getStoredValueFundSaleId() {
+	public String getStoredValueFundSaleId() {
 		return storedValueFundSaleId;
 	}
 
-	public void setStoredValueFundSaleId(Integer storedValueFundSaleId) {
+	public void setStoredValueFundSaleId(String storedValueFundSaleId) {
 		this.storedValueFundSaleId = storedValueFundSaleId;
 	}
 

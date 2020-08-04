@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.StoredValueFundSale;
 
-public interface StoredValueFundSaleRepository extends JpaRepository<StoredValueFundSale, Integer>{
+public interface StoredValueFundSaleRepository extends JpaRepository<StoredValueFundSale, String>{
 
 }

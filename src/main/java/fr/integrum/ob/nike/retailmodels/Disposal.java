@@ -7,31 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Disposals")
 public class Disposal {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "disposal_id")
-	private Integer disposalId;
+	private String disposalId;
 
 	@Column(name = "Method")
 	private String method;
 
 	@Column(name = "TransactionLinkId")
-	private Integer transactionLinkId;
+	private String transactionLinkId;
 
 	public Disposal() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getDisposalId() {
+	public String getDisposalId() {
 		return disposalId;
 	}
 
-	public void setDisposalId(Integer disposalId) {
+	public void setDisposalId(String disposalId) {
 		this.disposalId = disposalId;
 	}
 
@@ -43,11 +46,11 @@ public class Disposal {
 		this.method = method;
 	}
 
-	public Integer getTransactionLinkId() {
+	public String getTransactionLinkId() {
 		return transactionLinkId;
 	}
 
-	public void setTransactionLinkId(Integer transactionLinkId) {
+	public void setTransactionLinkId(String transactionLinkId) {
 		this.transactionLinkId = transactionLinkId;
 	}
 

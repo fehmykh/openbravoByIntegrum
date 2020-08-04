@@ -14,14 +14,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_LineItems")
 public class LineItem {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "LineItemId")
-	private Integer lineItemId;
+	private String lineItemId;
 
 	@Column(name = "EntryMethod")
 	private String entryMethod;
@@ -37,7 +40,7 @@ public class LineItem {
 	private Integer sequenceNumber;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ScanData", referencedColumnName = "LineItemId")
+	@JoinColumn(name = "LineItemId", referencedColumnName = "LineItemId")
 	private List<ScanData> scanData;
 
 	@Column(name = "BeginDateTime")
@@ -50,7 +53,7 @@ public class LineItem {
 	private String repairID;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Sale", referencedColumnName = "LineItemId")
+	@JoinColumn(name = "LineItemId", referencedColumnName = "LineItemId")
 	private List<Sale> sale;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -62,25 +65,25 @@ public class LineItem {
 	private StoredValueFundSale storedValueFundSale;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Return", referencedColumnName = "LineItemId")
+	@JoinColumn(name = "LineItemId", referencedColumnName = "LineItemId")
 	private List<Return> returns;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Tenders", referencedColumnName = "LineItemId")
+	@JoinColumn(name = "LineItemId", referencedColumnName = "LineItemId")
 	private List<Tender> tenders;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "TenderChange", referencedColumnName = "LineItemId")
+	@JoinColumn(name = "LineItemId", referencedColumnName = "LineItemId")
 	private List<TenderChange> tenderChange;
 
 	@Column(name = "retailTransactionId")
-	private Integer retailTransactionId;
+	private String retailTransactionId;
 
 	@Column(name = "orderTransactionId")
-	private Integer orderTransactionId;
+	private String orderTransactionId;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "SaleForDelivery", referencedColumnName = "LineItemId")
+	@JoinColumn(name = "LineItemId", referencedColumnName = "LineItemId")
 	private List<SaleForDelivery> salesForDelivery;
 
 	public LineItem() {
@@ -88,11 +91,11 @@ public class LineItem {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getLineItemId() {
+	public String getLineItemId() {
 		return lineItemId;
 	}
 
-	public void setLineItemId(Integer lineItemId) {
+	public void setLineItemId(String lineItemId) {
 		this.lineItemId = lineItemId;
 	}
 
@@ -208,19 +211,19 @@ public class LineItem {
 		this.tenderChange = tenderChange;
 	}
 
-	public Integer getRetailTransactionId() {
+	public String getRetailTransactionId() {
 		return retailTransactionId;
 	}
 
-	public void setRetailTransactionId(Integer retailTransactionId) {
+	public void setRetailTransactionId(String retailTransactionId) {
 		this.retailTransactionId = retailTransactionId;
 	}
 
-	public Integer getOrderTransactionId() {
+	public String getOrderTransactionId() {
 		return orderTransactionId;
 	}
 
-	public void setOrderTransactionId(Integer orderTransactionId) {
+	public void setOrderTransactionId(String orderTransactionId) {
 		this.orderTransactionId = orderTransactionId;
 	}
 

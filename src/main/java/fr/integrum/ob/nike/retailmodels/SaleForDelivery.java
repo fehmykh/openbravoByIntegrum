@@ -13,17 +13,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_SalesForDelivery")
 public class SaleForDelivery {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "SaleForDeliveryId")
-	private Integer saleForDeliveryId;
+	private String saleForDeliveryId;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Associates", referencedColumnName = "SaleForDeliveryId")
+	@JoinColumn(name = "SaleForDeliveryId", referencedColumnName = "SaleForDeliveryId")
 	private List<Associate> associates;
 
 	@Column(name = "eCommerceID")
@@ -44,7 +47,7 @@ public class SaleForDelivery {
 	private Item item;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Descriptions", referencedColumnName = "SaleForDeliveryId")
+	@JoinColumn(name = "SaleForDeliveryId", referencedColumnName = "SaleForDeliveryId")
 	private List<Description> descriptions;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -64,30 +67,30 @@ public class SaleForDelivery {
 	private Quantity quantity;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Taxes", referencedColumnName = "SaleForDeliveryId")
+	@JoinColumn(name = "SaleForDeliveryId", referencedColumnName = "SaleForDeliveryId")
 	private List<Taxe> taxes;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Delivery", referencedColumnName = "SaleForDeliveryId")
+	@JoinColumn(name = "SaleForDeliveryId", referencedColumnName = "SaleForDeliveryId")
 	private List<Delivery> delivery;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "RetailPriceModifiers", referencedColumnName = "SaleForDeliveryId")
+	@JoinColumn(name = "SaleForDeliveryId", referencedColumnName = "SaleForDeliveryId")
 	private List<RetailPriceModifier> retailPriceModifiers;
 
 	@Column(name = "LineItemId")
-	private Integer lineItemId;
+	private String lineItemId;
 
 	public SaleForDelivery() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getSaleForDeliveryId() {
+	public String getSaleForDeliveryId() {
 		return saleForDeliveryId;
 	}
 
-	public void setSaleForDeliveryId(Integer saleForDeliveryId) {
+	public void setSaleForDeliveryId(String saleForDeliveryId) {
 		this.saleForDeliveryId = saleForDeliveryId;
 	}
 
@@ -203,11 +206,11 @@ public class SaleForDelivery {
 		this.retailPriceModifiers = retailPriceModifiers;
 	}
 
-	public Integer getLineItemId() {
+	public String getLineItemId() {
 		return lineItemId;
 	}
 
-	public void setLineItemId(Integer lineItemId) {
+	public void setLineItemId(String lineItemId) {
 		this.lineItemId = lineItemId;
 	}
 

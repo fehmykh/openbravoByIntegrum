@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.SaleForDelivery;
 
-public interface SaleForDeliveryRepository extends JpaRepository<SaleForDelivery, Integer>{
+public interface SaleForDeliveryRepository extends JpaRepository<SaleForDelivery, String>{
 
 }

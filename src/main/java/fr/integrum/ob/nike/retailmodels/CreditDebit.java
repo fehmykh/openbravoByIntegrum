@@ -7,31 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_CreditDebits")
 public class CreditDebit {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "CreditDebitID")
-	private Integer creditDebitId;
+	private String creditDebitId;
 
 	@Column(name = "CardType")
 	private String cardType;
 
 	@Column(name = "TenderID")
-	private Integer tenderID;
+	private String tenderID;
 
 	public CreditDebit() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getCreditDebitId() {
+	public String getCreditDebitId() {
 		return creditDebitId;
 	}
 
-	public void setCreditDebitId(Integer creditDebitId) {
+	public void setCreditDebitId(String creditDebitId) {
 		this.creditDebitId = creditDebitId;
 	}
 
@@ -43,11 +46,11 @@ public class CreditDebit {
 		this.cardType = cardType;
 	}
 
-	public Integer getTenderID() {
+	public String getTenderID() {
 		return tenderID;
 	}
 
-	public void setTenderID(Integer tenderID) {
+	public void setTenderID(String tenderID) {
 		this.tenderID = tenderID;
 	}
 

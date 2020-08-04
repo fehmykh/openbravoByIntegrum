@@ -12,14 +12,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Pickups")
 public class Pickup {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "PickupId")
-	private Integer pickupId;
+	private String pickupId;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Name", referencedColumnName = "PickupId")
@@ -36,18 +39,18 @@ public class Pickup {
 	private Date PreferredDateTime;
 
 	@Column(name = "SaleForPickupId")
-	private Integer saleForPickupId;
+	private String saleForPickupId;
 
 	public Pickup() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getPickupId() {
+	public String getPickupId() {
 		return pickupId;
 	}
 
-	public void setPickupId(Integer pickupId) {
+	public void setPickupId(String pickupId) {
 		this.pickupId = pickupId;
 	}
 
@@ -83,11 +86,11 @@ public class Pickup {
 		PreferredDateTime = preferredDateTime;
 	}
 
-	public Integer getSaleForPickupId() {
+	public String getSaleForPickupId() {
 		return saleForPickupId;
 	}
 
-	public void setSaleForPickupId(Integer saleForPickupId) {
+	public void setSaleForPickupId(String saleForPickupId) {
 		this.saleForPickupId = saleForPickupId;
 	}
 }

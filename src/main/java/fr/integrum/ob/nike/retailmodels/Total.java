@@ -7,14 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Totals")
 public class Total {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "TotalID")
-	private Integer totalId;
+	private String totalId;
 
 	@Column(name = "Amount")
 	private Double amount;
@@ -23,18 +26,18 @@ public class Total {
 	private String totalType;
 
 	@Column(name = "retailTransactionId")
-	private Integer retailTransactionId;
+	private String retailTransactionId;
 
 	public Total() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getTotalId() {
+	public String getTotalId() {
 		return totalId;
 	}
 
-	public void setTotalId(Integer totalId) {
+	public void setTotalId(String totalId) {
 		this.totalId = totalId;
 	}
 
@@ -54,11 +57,11 @@ public class Total {
 		this.totalType = totalType;
 	}
 
-	public Integer getRetailTransactionId() {
+	public String getRetailTransactionId() {
 		return retailTransactionId;
 	}
 
-	public void setRetailTransactionId(Integer retailTransactionId) {
+	public void setRetailTransactionId(String retailTransactionId) {
 		this.retailTransactionId = retailTransactionId;
 	}
 

@@ -13,21 +13,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Returns")
 public class Return {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "returnID")
-	private Integer returnId;
+	private String returnId;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Associates", referencedColumnName = "returnID")
+	@JoinColumn(name = "returnID", referencedColumnName = "returnID")
 	private List<Associate> associates;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "SerialNumbers", referencedColumnName = "returnID")
+	@JoinColumn(name = "returnID", referencedColumnName = "returnID")
 	private List<SerialNumber> serialNumbers;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -42,7 +45,7 @@ public class Return {
 	private String type;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Descriptions", referencedColumnName = "returnID")
+	@JoinColumn(name = "returnID", referencedColumnName = "returnID")
 	private List<Description> descriptions;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -62,11 +65,11 @@ public class Return {
 	private Quantity quantity;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Taxes", referencedColumnName = "returnID")
+	@JoinColumn(name = "returnID", referencedColumnName = "returnID")
 	private List<Taxe> taxes;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "RetailPriceModifiers", referencedColumnName = "returnID")
+	@JoinColumn(name = "returnID", referencedColumnName = "returnID")
 	private List<RetailPriceModifier> retailPriceModifiers;
 
 	@Column(name = "eCommerceID")
@@ -77,18 +80,18 @@ public class Return {
 	private TransactionLink transactionLink;
 
 	@Column(name = "LineItemId")
-	private Integer lineItemId;
+	private String lineItemId;
 
 	public Return() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getReturnId() {
+	public String getReturnId() {
 		return returnId;
 	}
 
-	public void setReturnId(Integer returnId) {
+	public void setReturnId(String returnId) {
 		this.returnId = returnId;
 	}
 
@@ -204,11 +207,11 @@ public class Return {
 		this.transactionLink = transactionLink;
 	}
 
-	public Integer getLineItemId() {
+	public String getLineItemId() {
 		return lineItemId;
 	}
 
-	public void setLineItemId(Integer lineItemId) {
+	public void setLineItemId(String lineItemId) {
 		this.lineItemId = lineItemId;
 	}
 

@@ -7,14 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Reasons")
 public class Reason {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "reason_id")
-	private Integer reasonId;
+	private String reasonId;
 
 	@Column(name = "Code")
 	private String code;
@@ -26,21 +29,21 @@ public class Reason {
 	private String name;
 
 	@Column(name = "RetailPriceModifiersId")
-	private Integer retailPriceModifiersId;
+	private String retailPriceModifiersId;
 	
 	@Column(name = "TransactionLinkId")
-	private Integer transactionLinkId;
+	private String transactionLinkId;
 	
 	public Reason() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getReasonId() {
+	public String getReasonId() {
 		return reasonId;
 	}
 
-	public void setReasonId(Integer reasonId) {
+	public void setReasonId(String reasonId) {
 		this.reasonId = reasonId;
 	}
 
@@ -68,19 +71,19 @@ public class Reason {
 		this.name = name;
 	}
 
-	public Integer getRetailPriceModifiersId() {
+	public String getRetailPriceModifiersId() {
 		return retailPriceModifiersId;
 	}
 
-	public void setRetailPriceModifiersId(Integer retailPriceModifiersId) {
+	public void setRetailPriceModifiersId(String retailPriceModifiersId) {
 		this.retailPriceModifiersId = retailPriceModifiersId;
 	}
 
-	public Integer getTransactionLinkId() {
+	public String getTransactionLinkId() {
 		return transactionLinkId;
 	}
 
-	public void setTransactionLinkId(Integer transactionLinkId) {
+	public void setTransactionLinkId(String transactionLinkId) {
 		this.transactionLinkId = transactionLinkId;
 	}
 

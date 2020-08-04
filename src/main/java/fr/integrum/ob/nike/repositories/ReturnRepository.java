@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.Return;
 
-public interface ReturnRepository extends JpaRepository<Return, Integer>{
+public interface ReturnRepository extends JpaRepository<Return, String>{
 
 }

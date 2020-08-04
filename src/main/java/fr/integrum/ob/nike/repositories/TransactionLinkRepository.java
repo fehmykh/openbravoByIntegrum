@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.TransactionLink;
 
-public interface TransactionLinkRepository extends JpaRepository<TransactionLink, Integer>{
+public interface TransactionLinkRepository extends JpaRepository<TransactionLink, String>{
 
 }

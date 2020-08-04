@@ -7,37 +7,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Names")
 public class Name {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "name_id")
-	private Integer nameId;
+	private String nameId;
 
 	@Column(name = "FullName")
 	private String fullName;
 
 	@Column(name = "PickupId")
-	private Integer pickupId;
+	private String pickupId;
 	
 	@Column(name = "DeliveryID")
-	private Integer deliveryID;
+	private String deliveryID;
 	
 	@Column(name = "CustomerID")
-	private Integer customerID;
+	private String customerID;
 	
 	public Name() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getNameId() {
+	public String getNameId() {
 		return nameId;
 	}
 
-	public void setNameId(Integer nameId) {
+	public void setNameId(String nameId) {
 		this.nameId = nameId;
 	}
 
@@ -49,27 +52,27 @@ public class Name {
 		this.fullName = fullName;
 	}
 
-	public Integer getPickupId() {
+	public String getPickupId() {
 		return pickupId;
 	}
 
-	public void setPickupId(Integer pickupId) {
+	public void setPickupId(String pickupId) {
 		this.pickupId = pickupId;
 	}
 
-	public Integer getDeliveryID() {
+	public String getDeliveryID() {
 		return deliveryID;
 	}
 
-	public void setDeliveryID(Integer deliveryID) {
+	public void setDeliveryID(String deliveryID) {
 		this.deliveryID = deliveryID;
 	}
 
-	public Integer getCustomerID() {
+	public String getCustomerID() {
 		return customerID;
 	}
 
-	public void setCustomerID(Integer customerID) {
+	public void setCustomerID(String customerID) {
 		this.customerID = customerID;
 	}
 

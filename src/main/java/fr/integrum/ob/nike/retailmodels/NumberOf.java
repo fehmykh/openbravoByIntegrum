@@ -7,31 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_Names")
 public class NumberOf {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "name_id")
-	private Integer nameId;
+	private String nameId;
 
 	@Column(name = "Number")
 	private String number;
 
 	@Column(name = "PickupId")
-	private Integer pickupId;
+	private String pickupId;
 
 	public NumberOf() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getNameId() {
+	public String getNameId() {
 		return nameId;
 	}
 
-	public void setNameId(Integer nameId) {
+	public void setNameId(String nameId) {
 		this.nameId = nameId;
 	}
 
@@ -43,11 +46,11 @@ public class NumberOf {
 		this.number = number;
 	}
 
-	public Integer getPickupId() {
+	public String getPickupId() {
 		return pickupId;
 	}
 
-	public void setPickupId(Integer pickupId) {
+	public void setPickupId(String pickupId) {
 		this.pickupId = pickupId;
 	}
 }

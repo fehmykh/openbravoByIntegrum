@@ -7,14 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_ComplimentaryTenders")
 public class ComplimentaryTender {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "ComplimentaryTenderID")
-	private Integer complimentaryTenderId;
+	private String complimentaryTenderId;
 
 	@Column(name = "Account")
 	private String account;
@@ -35,18 +38,18 @@ public class ComplimentaryTender {
 	private String employeeID;
 	
 	@Column(name = "TenderID")
-	private Integer tenderID;
+	private String tenderID;
 	
 	public ComplimentaryTender() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getComplimentaryTenderId() {
+	public String getComplimentaryTenderId() {
 		return complimentaryTenderId;
 	}
 
-	public void setComplimentaryTenderId(Integer complimentaryTenderId) {
+	public void setComplimentaryTenderId(String complimentaryTenderId) {
 		this.complimentaryTenderId = complimentaryTenderId;
 	}
 
@@ -98,11 +101,11 @@ public class ComplimentaryTender {
 		this.employeeID = employeeID;
 	}
 
-	public Integer getTenderID() {
+	public String getTenderID() {
 		return tenderID;
 	}
 
-	public void setTenderID(Integer tenderID) {
+	public void setTenderID(String tenderID) {
 		this.tenderID = tenderID;
 	}
 

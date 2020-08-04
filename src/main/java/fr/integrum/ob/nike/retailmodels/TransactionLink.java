@@ -12,14 +12,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_TransactionLinks")
 public class TransactionLink {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "TransactionLinkId")
-	private Integer transactionLinkId;
+	private String transactionLinkId;
 
 	@Column(name = "ReasonCode")
 	private String reasonCode;
@@ -59,21 +62,21 @@ public class TransactionLink {
 	private Boolean itemNotOnFileFlag;
 
 	@Column(name = "returnID")
-	private Integer returnID;
+	private String returnID;
 
 	@Column(name = "CustomerID")
-	private Integer customerID;
+	private String customerID;
 
 	public TransactionLink() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getTransactionLinkId() {
+	public String getTransactionLinkId() {
 		return transactionLinkId;
 	}
 
-	public void setTransactionLinkId(Integer transactionLinkId) {
+	public void setTransactionLinkId(String transactionLinkId) {
 		this.transactionLinkId = transactionLinkId;
 	}
 
@@ -165,19 +168,19 @@ public class TransactionLink {
 		this.itemNotOnFileFlag = itemNotOnFileFlag;
 	}
 
-	public Integer getReturnID() {
+	public String getReturnID() {
 		return returnID;
 	}
 
-	public void setReturnID(Integer returnID) {
+	public void setReturnID(String returnID) {
 		this.returnID = returnID;
 	}
 
-	public Integer getCustomerID() {
+	public String getCustomerID() {
 		return customerID;
 	}
 
-	public void setCustomerID(Integer customerID) {
+	public void setCustomerID(String customerID) {
 		this.customerID = customerID;
 	}
 

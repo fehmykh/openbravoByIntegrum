@@ -13,13 +13,16 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_SalesForPickup")
 public class SaleForPickup {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "SaleForPickupId")
-	private Integer saleForPickupId;
+	private String saleForPickupId;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ItemType", referencedColumnName = "SaleForPickupId")
@@ -33,7 +36,7 @@ public class SaleForPickup {
 	private Item item;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Descriptions", referencedColumnName = "SaleForPickupId")
+	@JoinColumn(name = "SaleForPickupId", referencedColumnName = "SaleForPickupId")
 	private List<Description> descriptions;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -53,7 +56,7 @@ public class SaleForPickup {
 	private Quantity quantity;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Taxes", referencedColumnName = "SaleForPickupId")
+	@JoinColumn(name = "SaleForPickupId", referencedColumnName = "SaleForPickupId")
 	private List<Taxe> taxes;
 
 	@Column(name = "GiftReceiptFlag")
@@ -64,22 +67,22 @@ public class SaleForPickup {
 	private Pickup pickup;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "RetailPriceModifiers", referencedColumnName = "SaleForPickupId")
+	@JoinColumn(name = "SaleForPickupId", referencedColumnName = "SaleForPickupId")
 	private List<RetailPriceModifier> retailPriceModifiers;
 
 	@Column(name = "LineItemId")
-	private Integer lineItemId;
+	private String lineItemId;
 
 	public SaleForPickup() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getSaleForPickupId() {
+	public String getSaleForPickupId() {
 		return saleForPickupId;
 	}
 
-	public void setSaleForPickupId(Integer saleForPickupId) {
+	public void setSaleForPickupId(String saleForPickupId) {
 		this.saleForPickupId = saleForPickupId;
 	}
 
@@ -179,11 +182,11 @@ public class SaleForPickup {
 		this.retailPriceModifiers = retailPriceModifiers;
 	}
 
-	public Integer getLineItemId() {
+	public String getLineItemId() {
 		return lineItemId;
 	}
 
-	public void setLineItemId(Integer lineItemId) {
+	public void setLineItemId(String lineItemId) {
 		this.lineItemId = lineItemId;
 	}
 

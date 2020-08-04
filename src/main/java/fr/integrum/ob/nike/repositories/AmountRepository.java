@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.integrum.ob.nike.retailmodels.Amount;
 
-public interface AmountRepository extends JpaRepository<Amount, Integer>{
+public interface AmountRepository extends JpaRepository<Amount, String>{
 
 }

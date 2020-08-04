@@ -7,14 +7,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "NK_AddresseLines")
 public class AddresseLine {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "AddresseLineID")
-	private Integer addresseLineId;
+	private String addresseLineId;
 
 	@Column(name = "RelativeOrder")
 	private Integer relativeOrder;
@@ -35,18 +38,18 @@ public class AddresseLine {
 	private String telephoneNumber;
 	
 	@Column(name = "AddresseID")
-	private Integer addresseID;
+	private String addresseID;
 	
 	public AddresseLine() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getAddresseLineId() {
+	public String getAddresseLineId() {
 		return addresseLineId;
 	}
 
-	public void setAddresseLineId(Integer addresseLineId) {
+	public void setAddresseLineId(String addresseLineId) {
 		this.addresseLineId = addresseLineId;
 	}
 

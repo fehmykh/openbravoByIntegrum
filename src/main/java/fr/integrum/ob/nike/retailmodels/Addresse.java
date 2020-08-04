@@ -12,14 +12,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "nk_addresses")
 public class Addresse {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(name = "AddresseID")
-	private Integer addresseId;
+	private String addresseId;
 
 	@Column(name = "TypeCode")
 	private String typeCode;
@@ -28,7 +31,7 @@ public class Addresse {
 	private String city;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "AddressLines", referencedColumnName = "AddresseID")
+	@JoinColumn(name = "AddresseID", referencedColumnName = "AddresseID")
 	private List<AddresseLine> addressLines;
 
 	@Column(name = "DeliveryID")
@@ -39,11 +42,11 @@ public class Addresse {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Integer getAddresseId() {
+	public String getAddresseId() {
 		return addresseId;
 	}
 
-	public void setAddresseId(Integer addresseId) {
+	public void setAddresseId(String addresseId) {
 		this.addresseId = addresseId;
 	}
 
